@@ -1,5 +1,13 @@
+import NavBar from "../../Component/NavBar";
+import Home from "../../Component/Home";
+
 function PageTest1() {
-  return <h2>Home page 1</h2>;
+  return (
+    <>
+      <NavBar />
+      <Home />
+    </>
+  );
 }
 
 export default PageTest1;
