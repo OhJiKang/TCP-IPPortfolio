@@ -11,8 +11,12 @@ import StoreImg from "../../Asset/Store.png";
 import StudentImg from "../../Asset/Student.png";
 import OtherImg from "../../Asset/Other.png";
 import ProfessionBox from "./ProfessionBox";
+import { useState } from "react";
 
 function BuildProfession({ profession, setProfession }) {
+  if (window.localStorage.getItem("profession")) {
+    profession = window.localStorage.getItem("profession");
+  }
   const data = [
     {
       name: "Architect",
@@ -63,9 +67,12 @@ function BuildProfession({ profession, setProfession }) {
       img: OtherImg,
     },
   ];
-
   const handleClick = (e) => {
-    setProfession(e.currentTarget.lastChild.innerHTML);
+    window.localStorage.setItem(
+      "profession",
+      e.currentTarget.lastChild.innerHTML
+    );
+    return setProfession(e.currentTarget.lastChild.innerHTML);
   };
 
   return (

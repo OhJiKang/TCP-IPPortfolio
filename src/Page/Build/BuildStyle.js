@@ -10,9 +10,15 @@ function BuildStyle({ style, setStyle }) {
   const styleList = [Style1, Style2, Style3, Style4, Style5, Style6];
 
   const handleClick = (e) => {
+    window.localStorage.setItem(
+      "styleid",
+      e.currentTarget.getAttribute("index")
+    );
     setStyle(e.currentTarget.getAttribute("index"));
   };
-
+  if (window.localStorage.getItem("styleid")) {
+    style = window.localStorage.getItem("styleid");
+  }
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
       <div className="w-[480px] text-center font-heading font-[600] text-[40px] mb-6">

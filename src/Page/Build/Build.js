@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import LeftArrow from "../../Asset/LeftArrow.svg";
 import RightArrow from "../../Asset/RightArrow.svg";
 import BuildName from "./BuildName";
@@ -12,7 +12,6 @@ function Build() {
     profession: "",
     style: -1,
   });
-
   const setName = (name) => {
     setData({ ...data, name: name });
   };
@@ -24,9 +23,13 @@ function Build() {
   const setStyle = (style) => {
     setData({ ...data, style: style });
   };
+  let stepdis = step;
+  if (window.localStorage.getItem("step")) {
+    stepdis = JSON.parse(window.localStorage.getItem("step"));
+  }
 
   const stepDisplay = () => {
-    switch (step) {
+    switch (stepdis) {
       case 0:
         return <BuildName setName={setName} name={data.name} />;
       case 1:
@@ -48,8 +51,9 @@ function Build() {
 
         <div className="footer px-[20px] w-full h-[64px] absolute bottom-0 border-t-2 border-[#DBDBDB] flex items-center flex-row justify-between">
           <button
-            disabled={step == 0}
+            disabled={step === 0}
             onClick={() => {
+              window.localStorage.setItem("step", step - 1);
               setStep(step - 1);
             }}
             className=" h-[40px] border-[1px] flex justify-center items-center text-[18px] disabled:cursor-default disabled:text-neutral-400 p-3 hover:bg-[#CECECE] hover:disabled:bg-white"
@@ -58,8 +62,9 @@ function Build() {
             Back
           </button>
           <button
-            disabled={step == 2}
+            disabled={step === 2}
             onClick={() => {
+              window.localStorage.setItem("step", step + 1);
               setStep(step + 1);
             }}
             className="h-[40px] border-[1px] flex justify-center items-center text-[18px] disabled:cursor-default disabled:text-neutral-400 p-3 hover:bg-[#CECECE] hover:disabled:bg-white"

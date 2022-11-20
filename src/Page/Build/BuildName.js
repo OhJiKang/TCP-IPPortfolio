@@ -3,7 +3,12 @@ import ResetNameBtn from "../../Asset/ResetNameBtn.svg";
 
 function BuildName({ name, setName }) {
   const inputField = useRef();
-
+  if (window.localStorage.getItem("Name")) {
+    name = window.localStorage.getItem("Name");
+  }
+  useEffect(() => {
+    window.localStorage.setItem("Name", name);
+  }, [name]);
   const handleReset = () => {
     inputField.current.value = "";
   };
