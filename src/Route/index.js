@@ -1,8 +1,8 @@
-import PageTest1 from "../Page/PageTest1";
-import PageTest2 from "../Page/PageTest2";
+import Home from "../Page/Home";
+import Build from "../Page/Build";
 const publicRoutes = [
-  { path: "/", component: PageTest1 },
-  { path: "/build", component: PageTest2 },
+  { path: "/", component: Home },
+  { path: "/build", component: Build },
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };
