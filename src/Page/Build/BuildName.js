@@ -10,7 +10,7 @@ function BuildName({ name, setName }) {
 
   const handleChange = (e) => {
     setName(e.target.value);
-  }
+  };
 
   return (
     <div className="m-auto w-[480px] h-full pt-[290px] flex items-center flex-col">

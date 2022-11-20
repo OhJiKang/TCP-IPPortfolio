@@ -10,27 +10,32 @@ function Build() {
   const [data, setData] = useState({
     name: "",
     profession: "",
-    style: 0
+    style: -1,
   });
 
   const setName = (name) => {
-    setData({...data, name: name});
-  }
+    setData({ ...data, name: name });
+  };
 
   const setProfession = (profession) => {
-    setData({...data, profession: profession});
-  }
+    setData({ ...data, profession: profession });
+  };
 
   const setStyle = (style) => {
-    setData({...data, style: style});
-  }
+    setData({ ...data, style: style });
+  };
 
   const stepDisplay = () => {
     switch (step) {
       case 0:
         return <BuildName setName={setName} name={data.name} />;
       case 1:
-        return <BuildProfession setProfession={setProfession} profession={data.profession} />;
+        return (
+          <BuildProfession
+            setProfession={setProfession}
+            profession={data.profession}
+          />
+        );
       case 2:
         return <BuildStyle setStyle={setStyle} style={data.style} />;
     }

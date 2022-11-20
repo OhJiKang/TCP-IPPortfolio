@@ -10,7 +10,6 @@ import RetoucherImg from "../../Asset/Retoucher.png";
 import StoreImg from "../../Asset/Store.png";
 import StudentImg from "../../Asset/Student.png";
 import OtherImg from "../../Asset/Other.png";
-import { useRef, useState } from "react";
 import ProfessionBox from "./ProfessionBox";
 
 function BuildProfession({ profession, setProfession }) {
@@ -71,7 +70,7 @@ function BuildProfession({ profession, setProfession }) {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <div className="w-[480px] text-center font-heading font-[600] text-[40px] absolute top-28">
+      <div className="w-[480px] text-center font-heading font-[600] text-[40px] mb-6">
         WHAT IS YOUR PROFESSION ?
       </div>
       <div className="grid grid-cols-6 gap-[20px]">
