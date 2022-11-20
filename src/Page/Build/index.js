@@ -1,5 +1,5 @@
 import NavBar from "../../Component/NavBar";
-import Build from "../../Component/Build";
+import Build from "./Build";
 
 function PageTest2() {
   return (

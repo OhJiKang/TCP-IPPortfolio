@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import StartImage from "../Asset/start-image.png";
-import Arrow from "../Asset/Arrow.svg";
+import StartImage from "../../Asset/start-image.png";
+import Arrow from "../../Asset/Arrow.svg";
 import { Link } from "react-router-dom";
 
 function Home() {

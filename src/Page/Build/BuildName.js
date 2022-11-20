@@ -1,12 +1,17 @@
-import { useRef } from "react";
-import ResetNameBtn from "../Asset/ResetNameBtn.svg";
+import { useEffect, useRef } from "react";
+import ResetNameBtn from "../../Asset/ResetNameBtn.svg";
 
-function BuildName() {
-  const inputField = useRef(0);
+function BuildName({ name, setName }) {
+  const inputField = useRef();
 
   const handleReset = () => {
     inputField.current.value = "";
   };
+
+  const handleChange = (e) => {
+    setName(e.target.value);
+  }
+
   return (
     <div className="m-auto w-[480px] h-full pt-[290px] flex items-center flex-col">
       <div className="font-heading text-[40px] font-[600] text-center">
@@ -23,6 +28,8 @@ function BuildName() {
           autoFocus
           spellCheck={false}
           type="text"
+          value={name}
+          onInput={handleChange}
           placeholder="Enter the name"
         />
         <img

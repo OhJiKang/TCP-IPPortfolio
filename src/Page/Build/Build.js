@@ -1,22 +1,38 @@
 import { useState } from "react";
-import LeftArrow from "../Asset/LeftArrow.svg";
-import RightArrow from "../Asset/RightArrow.svg";
+import LeftArrow from "../../Asset/LeftArrow.svg";
+import RightArrow from "../../Asset/RightArrow.svg";
 import BuildName from "./BuildName";
 import BuildProfession from "./BuildProfession";
 import BuildStyle from "./BuildStyle";
 
 function Build() {
   const [step, setStep] = useState(0);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    name: "",
+    profession: "",
+    style: 0
+  });
+
+  const setName = (name) => {
+    setData({...data, name: name});
+  }
+
+  const setProfession = (profession) => {
+    setData({...data, profession: profession});
+  }
+
+  const setStyle = (style) => {
+    setData({...data, style: style});
+  }
 
   const stepDisplay = () => {
     switch (step) {
       case 0:
-        return <BuildName />;
+        return <BuildName setName={setName} name={data.name} />;
       case 1:
-        return <BuildProfession />;
+        return <BuildProfession setProfession={setProfession} profession={data.profession} />;
       case 2:
-        return <BuildStyle />;
+        return <BuildStyle setStyle={setStyle} style={data.style} />;
     }
   };
 
