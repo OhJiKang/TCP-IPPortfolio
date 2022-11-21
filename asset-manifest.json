@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/TCP-IPPortfolio/static/css/main.59ff6e22.css",
+    "main.js": "/TCP-IPPortfolio/static/js/main.f322f81f.js",
+    "static/js/787.9e83e489.chunk.js": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js",
+    "static/media/start-image.png": "/TCP-IPPortfolio/static/media/start-image.cdacf989f0772206c242.png",
+    "static/media/Store.png": "/TCP-IPPortfolio/static/media/Store.d151eae1a7218fa9299f.png",
+    "static/media/Designer.png": "/TCP-IPPortfolio/static/media/Designer.d916832ad66353eb3056.png",
+    "static/media/Programmer.png": "/TCP-IPPortfolio/static/media/Programmer.111367c563aef727456c.png",
+    "static/media/Student.png": "/TCP-IPPortfolio/static/media/Student.82426beddfda76225422.png",
+    "static/media/Photographer.png": "/TCP-IPPortfolio/static/media/Photographer.cadfd05e8170eda97b32.png",
+    "static/media/MakeupArtist.png": "/TCP-IPPortfolio/static/media/MakeupArtist.dfe6abdb409634fdb572.png",
+    "static/media/Musician.png": "/TCP-IPPortfolio/static/media/Musician.80e8504e99011a4542b9.png",
+    "static/media/Artist.png": "/TCP-IPPortfolio/static/media/Artist.9be1730727fad014dc4a.png",
+    "static/media/Architect.png": "/TCP-IPPortfolio/static/media/Architect.cd0447144743d4cee31c.png",
+    "static/media/Retoucher.png": "/TCP-IPPortfolio/static/media/Retoucher.88bd7a8e3c54e2ed0c2f.png",
+    "static/media/Main-background.png": "/TCP-IPPortfolio/static/media/Main-background.4d054ea6c39cd097aedc.png",
+    "static/media/Model.png": "/TCP-IPPortfolio/static/media/Model.6d155fb35e7a977185a5.png",
+    "static/media/Logo.svg": "/TCP-IPPortfolio/static/media/Logo.2eedf21ef42071d8f4c53cc6539d819f.svg",
+    "index.html": "/TCP-IPPortfolio/index.html",
+    "static/media/ResetNameBtn.svg": "/TCP-IPPortfolio/static/media/ResetNameBtn.f19405cf602e7fbc46c626fd4b578ca9.svg",
+    "static/media/LeftArrow.svg": "/TCP-IPPortfolio/static/media/LeftArrow.f4534f90db7fbb9fac957c44d653a28e.svg",
+    "static/media/RightArrow.svg": "/TCP-IPPortfolio/static/media/RightArrow.3a820f3bbfb9f5b6a8735bc447185896.svg",
+    "static/media/Arrow.svg": "/TCP-IPPortfolio/static/media/Arrow.a618308712c4fd54111b891ebedc627e.svg",
+    "main.59ff6e22.css.map": "/TCP-IPPortfolio/static/css/main.59ff6e22.css.map",
+    "main.f322f81f.js.map": "/TCP-IPPortfolio/static/js/main.f322f81f.js.map",
+    "787.9e83e489.chunk.js.map": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59ff6e22.css",
+    "static/js/main.f322f81f.js"
+  ]
+}
