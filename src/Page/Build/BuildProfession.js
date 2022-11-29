@@ -14,9 +14,6 @@ import ProfessionBox from "./ProfessionBox";
 import { useState } from "react";
 
 function BuildProfession({ profession, setProfession }) {
-  if (window.localStorage.getItem("profession")) {
-    profession = window.localStorage.getItem("profession");
-  }
   const data = [
     {
       name: "Architect",

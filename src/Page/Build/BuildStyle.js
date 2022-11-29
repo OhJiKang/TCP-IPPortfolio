@@ -16,9 +16,7 @@ function BuildStyle({ style, setStyle }) {
     );
     setStyle(e.currentTarget.getAttribute("index"));
   };
-  if (window.localStorage.getItem("styleid")) {
-    style = window.localStorage.getItem("styleid");
-  }
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
       <div className="w-[480px] text-center font-heading font-[600] text-[40px] mb-6">
