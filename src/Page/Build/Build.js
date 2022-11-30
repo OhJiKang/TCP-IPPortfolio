@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router";
 import LeftArrow from "../../Asset/LeftArrow.svg";
 import RightArrow from "../../Asset/RightArrow.svg";
 import BuildName from "./BuildName";
@@ -6,6 +7,7 @@ import BuildProfession from "./BuildProfession";
 import BuildStyle from "./BuildStyle";
 
 function Build() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
     name: "",
@@ -13,15 +15,21 @@ function Build() {
     style: -1,
   });
   const setName = (name) => {
-    setData(data => {return { ...data, name: name }});
+    setData((data) => {
+      return { ...data, name: name };
+    });
   };
 
   const setProfession = (profession) => {
-    setData(data => {return { ...data, profession: profession }});
+    setData((data) => {
+      return { ...data, profession: profession };
+    });
   };
 
   const setStyle = (style) => {
-    setData(data => {return { ...data, style: style }});
+    setData((data) => {
+      return { ...data, style: style };
+    });
   };
 
   useEffect(() => {
@@ -34,7 +42,7 @@ function Build() {
       setName(nameLocal);
     }
     if (window.localStorage.getItem("profession")) {
-      let professionLocal = window.localStorage.getItem("profession")
+      let professionLocal = window.localStorage.getItem("profession");
       setProfession(professionLocal);
     }
 
@@ -42,7 +50,6 @@ function Build() {
       let styleLocal = window.localStorage.getItem("styleid");
       setStyle(styleLocal);
     }
-    
   }, []);
 
   const stepDisplay = () => {
@@ -79,10 +86,13 @@ function Build() {
             Back
           </button>
           <button
-            disabled={step === 2}
             onClick={() => {
-              window.localStorage.setItem("step", step + 1);
-              setStep(step + 1);
+              if (step === 2) {
+                navigate("/edit");
+              } else {
+                window.localStorage.setItem("step", step + 1);
+                setStep(step + 1);
+              }
             }}
             className="h-[40px] border-[1px] flex justify-center items-center text-[18px] disabled:cursor-default disabled:text-neutral-400 p-3 hover:bg-[#bbbbbb] hover:disabled:bg-white"
           >
