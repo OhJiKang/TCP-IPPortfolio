@@ -1,4 +1,4 @@
-function Experience() {
+function Experience1() {
   return (
     <div className="w-[900px] h-[680px] rounded-[40px] pt-[60px] bg-c1">
       <div className="relative w-[820px] h-[580px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col justify-between items-center py-[35px]">
@@ -7,7 +7,9 @@ function Experience() {
         </div>
         <div className="w-[740px] h-[240px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white">
           <p className="text-[18px]">Cong ty Lua dao</p>
-          <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">2019 - 2077</p>
+          <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">
+            2019 - 2077
+          </p>
           <p className="mx-[10px] mt-[10px] text-[14px] leading-[19px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -22,7 +24,9 @@ function Experience() {
         </div>
         <div className="w-[740px] h-[240px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white">
           <p className="text-[18px]">Cong ty Lua dao</p>
-          <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">2019 - 2077</p>
+          <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">
+            2019 - 2077
+          </p>
           <p className="mx-[10px] mt-[10px] text-[14px] leading-[19px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -40,4 +44,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+export default Experience1;

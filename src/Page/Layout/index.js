@@ -1,9 +1,7 @@
 import Layout from "./Layout";
 
 function LayoutPage() {
-    return (
-        <Layout />
-    )
+  return <Layout />;
 }
 
 export default LayoutPage;
