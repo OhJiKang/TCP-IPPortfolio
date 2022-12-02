@@ -1,12 +1,14 @@
 import NavBarEdit from "./NavBarEdit";
 import Edit from "./Edit";
-
+import { DragDropContext } from "react-beautiful-dnd";
 
 function PageTest3() {
   return (
     <>
-      <NavBarEdit />
-      <Edit />
+      <DragDropContext>
+        <NavBarEdit />
+        <Edit />
+      </DragDropContext>
     </>
   );
 }

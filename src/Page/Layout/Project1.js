@@ -1,6 +1,6 @@
 import Computer from "../../Asset/Computer.png";
 
-function Education2() {
+function Project1() {
   return (
     <div className="w-[900px] h-[540px] rounded-[40px] pt-[60px] bg-c1">
       <div className="relative w-[820px] h-[440px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col justify-between items-center py-[35px]">
@@ -44,4 +44,4 @@ function Education2() {
   );
 }
 
-export default Education2;
+export default Project1;
