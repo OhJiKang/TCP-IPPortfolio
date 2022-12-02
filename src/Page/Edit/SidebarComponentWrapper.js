@@ -20,8 +20,8 @@ function SidebarComponentWrapper({ name, children, droppableId }) {
               {(provided) => (
                 <div
                   className={`w-[240px] ${
-                    open ? "h-[300px] my-3" : "h-0 my-0 border-none"
-                  } overflow-hidden duration-300 transition-all mx-auto my-3  flex flex-col justify-around`}
+                    open ? "my-3 h-fit max-h-[400px]" : "max-h-0 h-0 my-0 border-none"
+                  } overflow-hidden duration-500 transition-all mx-auto my-3 flex flex-col justify-around`}
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >

@@ -39,7 +39,7 @@ function Sidebar() {
                     {...provided.dragHandleProps}
                   >
                     <img
-                      className="mb-4 mt-4"
+                      className="mb-2"
                       src={children.image}
                       alt={`About_me_${index}`}
                     ></img>
