@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./Component/GlobalStyle";
-import { ArrContext } from "./Page/Edit/ArrContext";
+import { ArrContext } from "./Page/Edit/Store/ArrContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ArrContext>

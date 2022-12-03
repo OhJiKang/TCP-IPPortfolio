@@ -9,9 +9,9 @@ import RoundedIconWrapper from "./RoundedIconWrapper";
 import { useContext, useEffect, useRef, useState } from "react";
 import { aboutMeContainer } from "../../Util/containerlayout";
 import { Droppable } from "react-beautiful-dnd";
-import { DropArr } from "./ArrContext";
+import { ArrContext } from "./Store";
 function Edit() {
-  const arrDisplay = useContext(DropArr);
+  const [ArrPresent, setArrPresent] = useContext(ArrContext);
   const canvaRef = useRef();
   const canvaContainerRef = useRef();
 
@@ -64,8 +64,8 @@ function Edit() {
                     <img src={Bin} />
                   </RoundedIconWrapper>
                 </div>
-                {arrDisplay[0].length === 0 &&
-                  arrDisplay[0].map(({ key, component, id, image }, index) => {
+                {ArrPresent.length != 0 &&
+                  ArrPresent.map(({ key, component, id, image }, index) => {
                     return <div key={index}> {component()}</div>;
                   })}
                 {provided.placeholder}

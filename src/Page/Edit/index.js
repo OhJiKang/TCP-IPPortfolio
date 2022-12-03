@@ -1,19 +1,20 @@
 import NavBarEdit from "./NavBarEdit";
 import Edit from "./Edit";
 import { DragDropContext } from "react-beautiful-dnd";
-import { DropArr } from "./ArrContext";
-import { useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { aboutMeContainer } from "../../Util/containerlayout";
+import { ArrContext } from "./Store";
 function PageTest3() {
-  const arrDisplay = useContext(DropArr);
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  const [arrPresent, setArrPresent] = useContext(ArrContext);
+  console.log(arrPresent);
   const getPos = (event) => {
-    console.log(event);
     switch (event.source.droppableId) {
       case "aboutMeContainer": {
-        arrDisplay[0].push(aboutMeContainer[event.source.index]);
-        console.log(arrDisplay[0]);
-        arrDisplay[1](arrDisplay[0]);
-        break;
+        arrPresent.push(aboutMeContainer[event.source.index]);
+        setArrPresent(arrPresent);
+        forceUpdate();
       }
       default: {
         break;
