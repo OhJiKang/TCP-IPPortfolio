@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./Component/GlobalStyle";
+import { ArrContext } from "./Page/Edit/ArrContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <GlobalStyle>
-    <App />
-  </GlobalStyle>
+  <ArrContext>
+    <GlobalStyle>
+      <App />
+    </GlobalStyle>
+  </ArrContext>
 );
 
 // If you want to start measuring performance in your app, pass a function

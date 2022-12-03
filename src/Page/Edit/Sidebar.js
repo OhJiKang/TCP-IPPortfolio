@@ -22,7 +22,7 @@ function Sidebar() {
       </div>
       <SidebarComponentWrapper
         name="Education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Certification"
-        dropID={aboutMeContainer.id}
+        dropID={"aboutMeContainer"}
       >
         <div className="Aboutme_container">
           {aboutMeContainer.map((children, index) => {

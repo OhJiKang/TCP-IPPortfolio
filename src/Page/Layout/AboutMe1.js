@@ -2,7 +2,7 @@ import Dog from "../../Asset/Dog.png";
 
 function AboutMe1() {
   return (
-    <div className="w-[900px] h-[400px] rounded-[40px] pt-[90px] bg-[url('../Asset/AboutmeBackground1.png')]">
+    <div className=" h-[400px]  pt-[90px] bg-[url('../Asset/AboutmeBackground1.png')]">
       <div className="relative mx-auto w-[740px] h-[280px] bg-c2 border-c4 border-[5px] rounded-[100px] pt-[70px]">
         <div className="absolute top-0 left-1/2 border-[5px] rounded-full h-[140px] w-[140px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
           <img src={Dog} />
