@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap");
+
+:root {
+  --c1: #404258;
+  --c2: #474e68;
+  --c3: #50577a;
+  --c4: #6b728e;
+}
 
 * {
   box-sizing: border-box;
@@ -14,11 +21,11 @@ html,
 body,
 #root,
 .App {
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
   
 }
