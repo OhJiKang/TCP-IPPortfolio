@@ -14,7 +14,7 @@ function ComponentWrapper({ children, className, id }) {
   return (
     <div className={` ${className} relative group`} id={id}>
       {children}
-      <div className="absolute -left-14 top-1/2 bg-white rounded-t-full rounded-b-full opacity-0 group-hover:opacity-100 duration-300 ease-in-out -translate-y-1/2">
+      <div className="absolute bottom-0 z-10 left-1/2 bg-white flex flex-row rounded-t-full rounded-b-full opacity-0 group-hover:opacity-100 duration-300 ease-in-out -translate-x-1/2 translate-y-1/2">
         <RoundedIconWrapper>
           <img src={Bin} ref={refchild} onClick={deleteComponent} />
         </RoundedIconWrapper>

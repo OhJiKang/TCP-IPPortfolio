@@ -9,31 +9,6 @@ import { Droppable } from "react-beautiful-dnd";
 import { ArrContext } from "./Store";
 function Edit() {
   const [ArrPresent, setArrPresent] = useContext(ArrContext);
-  const canvaRef = useRef();
-  const canvaContainerRef = useRef();
-
-  const handleOnWheel = (e) => {
-    if (e.ctrlKey) {
-      e.preventDefault();
-      let currentScale = parseFloat(
-        canvaRef.current.style.transform.match(/\d+\.\d+/)
-      );
-      if (e.deltaY > 0) {
-        if (currentScale > 0.5)
-          canvaRef.current.style.transform = `scale(${currentScale - 0.055})`;
-      } else if (e.deltaY < 0) {
-        if (currentScale < 2)
-          canvaRef.current.style.transform = `scale(${currentScale + 0.055})`;
-      }
-    }
-  };
-
-  useEffect(() => {
-    canvaContainerRef.current.addEventListener("wheel", handleOnWheel, {
-      passive: false,
-    });
-    canvaRef.current.style.transform = "scale(0.75)";
-  }, []);
 
   return (
     <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
@@ -45,11 +20,9 @@ function Edit() {
             {...provided.droppableProps}
           >
             <div
-              ref={canvaContainerRef}
               className="w-full min-h-full h-fit flex flex-col items-center pr-[260px] pt-[75px]"
             >
               <div
-                ref={canvaRef}
                 className="w-[1440px] bg-white min-h-full h-fit shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
               >
                 <div className="h-[380px] w-full relative group">
