@@ -4,9 +4,15 @@ import BigImageIcon from "../../Asset/BigImageIcon.svg";
 import SidebarComponentWrapper from "./SidebarComponentWrapper";
 import TextLeft from "../../Asset/TextLeft.svg";
 import TextCenter from "../../Asset/TextCenter.svg";
-import { aboutMeContainer } from "../../Util/containerlayout";
+import {
+  aboutMeContainer,
+  ContactContainer,
+  CVContainer,
+  educationContainer,
+  experienceContainer,
+  Project,
+} from "../../Util/containerlayout";
 import { Draggable, Droppable } from "react-beautiful-dnd";
-
 function Sidebar() {
   return (
     <div className="w-[260px] h-full bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] pt-[64px] fixed right-0 top-0 overflow-y-scroll">
@@ -20,15 +26,12 @@ function Sidebar() {
           Image
         </div>
       </div>
-      <SidebarComponentWrapper
-        name="Education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Certification"
-        dropID={"aboutMeContainer"}
-      >
+      <SidebarComponentWrapper name="About me" dropID={"aboutMeContainer"}>
         <div className="Aboutme_container">
           {aboutMeContainer.map((children, index) => {
             return (
               <Draggable
-                key={`${children.id}`}
+                key={`${children.key}`}
                 draggableId={`${children.id}`}
                 index={index}
               >
@@ -50,51 +53,143 @@ function Sidebar() {
           })}
         </div>
       </SidebarComponentWrapper>
-      <SidebarComponentWrapper name="Work experience">
+      <SidebarComponentWrapper
+        name="Work experience"
+        dropID={"WorkExperienceContainer"}
+      >
+        {experienceContainer.map((children, index) => {
+          return (
+            <Draggable
+              key={`${children.key}`}
+              draggableId={`${children.id}`}
+              index={index}
+            >
+              {(provided) => (
+                <div
+                  {...provided.draggableProps}
+                  ref={provided.innerRef}
+                  {...provided.dragHandleProps}
+                >
+                  <img
+                    className="mb-2"
+                    src={children.image}
+                    alt={`Work_Experience_${index}`}
+                  ></img>
+                </div>
+              )}
+            </Draggable>
+          );
+        })}
+      </SidebarComponentWrapper>
+      <SidebarComponentWrapper
+        name="Education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Certification"
+        dropID={"EducationContainer"}
+      >
         <div>
-          <img className="ml-10" src={TextLeft} />
-          <img className="ml-10" src={TextLeft} />
+          {educationContainer.map((children, index) => {
+            return (
+              <Draggable
+                key={`${children.key}`}
+                draggableId={`${children.id}`}
+                index={index}
+              >
+                {(provided) => (
+                  <div
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    <img
+                      className="mb-2"
+                      src={children.image}
+                      alt={`Work_Experience_${index}`}
+                    ></img>
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
         </div>
       </SidebarComponentWrapper>
-      <SidebarComponentWrapper name="Project">
+      <SidebarComponentWrapper name="Project" dropID={"ProjectContainer"}>
         <div>
-          <div>
-            <div className="flex flex-row justify-center">
-              <img src={BigImageIcon} />
-              <img src={TextLeft} />
-            </div>
-            <div className="flex flex-row justify-center">
-              <img src={BigImageIcon} />
-              <img src={TextLeft} />
-            </div>
-          </div>
+          {Project.map((children, index) => {
+            return (
+              <Draggable
+                key={`${children.key}`}
+                draggableId={`${children.id}`}
+                index={index}
+              >
+                {(provided) => (
+                  <div
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    <img
+                      className="mb-2"
+                      src={children.image}
+                      alt={`Project_${index}`}
+                    ></img>
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
         </div>
       </SidebarComponentWrapper>
-      <SidebarComponentWrapper name="CV">
-        <div className="flex justify-around">
-          <img className="w-[200px] h-[160px]" src={BigImageIcon} />
-        </div>
-        <div className="flex justify-around">
-          <img className="w-[200px] h-[160px]" src={TextLeft} />
+      <SidebarComponentWrapper name="Contact" dropID={"ContactContainer"}>
+        <div>
+          {ContactContainer.map((children, index) => {
+            return (
+              <Draggable
+                key={`${children.key}`}
+                draggableId={`${children.id}`}
+                index={index}
+              >
+                {(provided) => (
+                  <div
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    <img
+                      className="mb-2"
+                      src={children.image}
+                      alt={`Project_${index}`}
+                    ></img>
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
         </div>
       </SidebarComponentWrapper>
-      <SidebarComponentWrapper name="Contact">
-        <div className="flex justify-around">
-          <img className="w-[200px] h-[160px]" src={TextLeft} />
-        </div>
-      </SidebarComponentWrapper>
-      <SidebarComponentWrapper name="About me">
-        <div className="flex flex-col items-center">
-          <div className="w-[60px] h-[60px] rounded-full border-[#DBDBDB] border-[1px] flex justify-center items-center">
-            <img className="w-[40px] h-[40px]" src={ImageIcon} />
-          </div>
-          <img className="" src={TextCenter} />
-        </div>
-        <div className="flex flex-row justify-around px-4 items-center">
-          <div className="w-[60px] h-[60px] rounded-full border-[#DBDBDB] border-[1px] flex justify-center items-center">
-            <img className="w-[40px] h-[40px]" src={ImageIcon} />
-          </div>
-          <img className="" src={TextLeft} />
+      <SidebarComponentWrapper name="CV" dropID={"CVContainer"}>
+        <div>
+          {CVContainer.map((children, index) => {
+            return (
+              <Draggable
+                key={`${children.key}`}
+                draggableId={`${children.id}`}
+                index={index}
+              >
+                {(provided) => (
+                  <div
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    <img
+                      className="mb-2"
+                      src={children.image}
+                      alt={`Project_${index}`}
+                    ></img>
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
         </div>
       </SidebarComponentWrapper>
     </div>
