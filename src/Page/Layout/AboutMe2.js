@@ -1,9 +1,12 @@
 import Dog from "../../Asset/Dog.png";
 import ComponentWrapper from "./ComponentWrapper";
 
-function AboutMe2() {
+function AboutMe2({ index }) {
   return (
-    <ComponentWrapper className="w-full pl-[140px] py-[60px] flex flex-row items-center justify-around bg-cover bg-[url('../Asset/AboutmeBackground2.png')]">
+    <ComponentWrapper
+      id={index}
+      className="w-full pl-[140px] py-[60px] flex flex-row items-center justify-around bg-cover bg-[url('../Asset/AboutmeBackground2.png')]"
+    >
       <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px]">
         <div className="absolute top-1/2 left-0 border-[5px] rounded-full h-[200px] w-[200px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
           <img src={Dog} />
@@ -19,15 +22,13 @@ function AboutMe2() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            dolore magna aliqua. pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
       </div>

@@ -1,14 +1,22 @@
 import RoundedIconWrapper from "../Edit/RoundedIconWrapper";
 import Bin from "../../Asset/Bin.svg";
 import Pallet from "../../Asset/pallet.svg";
-
-function ComponentWrapper({ children, className }) {
+import { useCallback, useContext, useRef, useState } from "react";
+import { ArrContext } from "../Edit/Store";
+function ComponentWrapper({ children, className, id }) {
+  const refchild = useRef(null);
+  const [arrPresent, setArrPresent] = useContext(ArrContext);
+  const deleteComponent = () => {
+    let id = refchild.current.offsetParent.offsetParent.id;
+    arrPresent.splice(id, 1);
+    setArrPresent(arrPresent);
+  };
   return (
-    <div className={` ${className} relative group`}>
+    <div className={` ${className} relative group`} id={id}>
       {children}
       <div className="absolute -left-14 top-1/2 bg-white rounded-t-full rounded-b-full opacity-0 group-hover:opacity-100 duration-300 ease-in-out -translate-y-1/2">
         <RoundedIconWrapper>
-          <img src={Bin} />
+          <img src={Bin} ref={refchild} onClick={deleteComponent} />
         </RoundedIconWrapper>
         <RoundedIconWrapper>
           <img src={Pallet} />

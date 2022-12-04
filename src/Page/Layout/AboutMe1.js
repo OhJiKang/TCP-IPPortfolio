@@ -1,9 +1,12 @@
 import Dog from "../../Asset/Dog.png";
 import ComponentWrapper from "./ComponentWrapper";
 
-function AboutMe1() {
+function AboutMe1({ index }) {
   return (
-    <ComponentWrapper className=" w-full pt-[90px] pb-[30px] bg-[url('../Asset/AboutmeBackground1.png')]">
+    <ComponentWrapper
+      className=" w-full pt-[90px] pb-[30px] bg-[url('../Asset/AboutmeBackground1.png')]"
+      id={index}
+    >
       <div className="relative mx-auto w-[740px] bg-c2 border-c4 border-[5px] rounded-[100px] pt-[70px]">
         <div className="absolute top-0 left-1/2 border-[5px] rounded-full h-[140px] w-[140px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
           <img src={Dog} />

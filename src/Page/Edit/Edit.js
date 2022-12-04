@@ -39,7 +39,11 @@ function Edit() {
     <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
       <Droppable droppableId="Drop_Place">
         {(provided) => (
-          <div className="w-full min-h-full h-fit" ref={provided.innerRef} {...provided.droppableProps}>
+          <div
+            className="w-full min-h-full h-fit"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
             <div
               ref={canvaContainerRef}
               className="w-full min-h-full h-fit flex flex-col items-center pr-[260px] pt-[75px]"
@@ -62,7 +66,7 @@ function Edit() {
                 </div>
                 {ArrPresent.length != 0 &&
                   ArrPresent.map(({ key, component, id, image }, index) => {
-                    return <div key={index}> {component()}</div>;
+                    return <div key={index}>{component({ index })}</div>;
                   })}
                 {provided.placeholder}
               </div>
