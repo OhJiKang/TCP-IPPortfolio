@@ -1,17 +1,8 @@
-import Education1Compo from "../../Component/Education1";
-import ComponentWrapper from "./ComponentWrapper";
-import Section from "./Section";
-function Education1({ index }) {
+import Section from "../../Page/Layout/Section";
+
+function Education1Compo() {
   return (
-    <ComponentWrapper
-      className="w-full py-[60px] bg-cover bg-[url('../Asset/EducationBackground1.png')]"
-      id={index}
-    >
-      <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[240px] h-[40px] border-c4 border-[5px] rounded-[10px] text-white font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          Education & Certification
-        </div>
-      </div>
+    <div>
       <Section className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white">
         <p className="text-[18px]">Student at Ton Duc Thang University</p>
         <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">
@@ -29,8 +20,8 @@ function Education1({ index }) {
           magna aliqua.
         </p>
       </Section>
-    </ComponentWrapper>
+    </div>
   );
 }
 
-export default Education1;
+export default Education1Compo;
