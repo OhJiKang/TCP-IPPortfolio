@@ -7,7 +7,7 @@ function ComponentWrapper({ children, className, id }) {
   const refchild = useRef(null);
   const deletefunc = useStore((state) => state.deletePresent);
   const deleteComponent = () => {
-    let id = refchild.current.offsetParent.id;
+    let id = refchild.current.offsetParent.offsetParent.id;
     deletefunc(id);
   };
   return (
