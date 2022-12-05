@@ -4,10 +4,7 @@ import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
 function Contact1({ index }) {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
-  const [numofContact1, setnumofContact1] = useState([
-    Contact1Compo,
-    Contact1Compo,
-  ]);
+  const [numofContact1, setnumofContact1] = useState([Contact1Compo]);
   const IncreaseElement = () => {
     numofContact1.push(Contact1Compo);
     setnumofContact1(numofContact1);

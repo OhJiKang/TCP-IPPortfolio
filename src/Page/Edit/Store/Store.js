@@ -19,5 +19,6 @@ let store = (set) => ({
       })
     ),
 });
+store = persist(store, { name: "EditArr" });
 const useStore = create(store);
 export default useStore;

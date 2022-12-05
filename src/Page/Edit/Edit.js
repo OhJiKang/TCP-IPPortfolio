@@ -4,11 +4,35 @@ import ImageIcon from "../../Asset/ImageIcon.svg";
 import Bin from "../../Asset/Bin.svg";
 import RoundedIconWrapper from "./RoundedIconWrapper";
 import { useContext, useEffect, useRef, useState } from "react";
-import { aboutMeContainer } from "../../Util/containerlayout";
+import {
+  aboutMeContainer,
+  ContactContainer,
+  CVContainer,
+  educationContainer,
+  experienceContainer,
+  Project,
+} from "../../Util/containerlayout";
 import { Droppable } from "react-beautiful-dnd";
 import useStore from "./Store/Store";
+
 function Edit() {
+  const sumofArr = [
+    ...aboutMeContainer,
+    ...ContactContainer,
+    ...CVContainer,
+    ...educationContainer,
+    ...experienceContainer,
+    ...Project,
+  ];
   let arrPresent = useStore((state) => state.arrPresent);
+  let returnArr = [];
+  for (let i of arrPresent) {
+    returnArr = [
+      ...returnArr,
+      sumofArr.filter((component) => i === component.key)[0],
+    ];
+  }
+  console.log(returnArr);
   return (
     <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
       <Droppable droppableId="Drop_Place">
@@ -36,9 +60,9 @@ function Edit() {
                     <img src={Bin} />
                   </RoundedIconWrapper>
                 </div>
-                {arrPresent !== undefined &&
-                  arrPresent.length !== 0 &&
-                  arrPresent.map(({ key, Component, id, image }, index) => {
+                {returnArr !== undefined &&
+                  returnArr.length !== 0 &&
+                  returnArr.map(({ key, Component, id, image }, index) => {
                     return (
                       <div key={index}>
                         {<Component index={index} key={`Com_${index}`} />}
