@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AboutMe1 from "./AboutMe1";
 import AboutMe2 from "./AboutMe2";
-import Contact from "./Contact";
+import Contact1 from "./Contact1";
 import CV1 from "./CV1";
 import Education1 from "./Education1";
 import Education2 from "./Education2";
@@ -17,7 +17,7 @@ function Layout() {
       <Education2 />
       <Experience1 />
       <Project1 />
-      <Contact />
+      <Contact1 />
       <CV1 />
     </div>
   );

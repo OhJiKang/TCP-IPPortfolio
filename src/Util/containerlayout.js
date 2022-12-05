@@ -5,7 +5,7 @@ import Education2 from "../Page/Layout/Education2";
 import Experience from "../Page/Layout/Experience";
 import Project1 from "../Page/Layout/Project1";
 import CV1 from "../Page/Layout/CV1";
-import Contact from "../Page/Layout/Contact";
+import Contact1 from "../Page/Layout/Contact1";
 import AboutMe1IMG from "../Asset/About_me_1.png";
 import AboutMe2IMG from "../Asset/About_me_2.png";
 import Experience1IMG from "../Asset/Experiece_1.png";
@@ -30,7 +30,7 @@ const Project = [
 ];
 const CVContainer = [{ key: "CV0", Component: CV1, id: 400, image: MyCV1IMG }];
 const ContactContainer = [
-  { key: "Contact0", Component: Contact, id: 500, image: Contact1IMG },
+  { key: "Contact0", Component: Contact1, id: 500, image: Contact1IMG },
 ];
 export {
   aboutMeContainer,

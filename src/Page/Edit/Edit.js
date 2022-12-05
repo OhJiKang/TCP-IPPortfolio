@@ -37,7 +37,7 @@ function Edit() {
                   arrPresent.map(({ key, Component, id, image }, index) => {
                     return (
                       <div key={index}>
-                        {<Component key={`Com_${index}`} />}
+                        {<Component index={index} key={`Com_${index}`} />}
                       </div>
                     );
                   })}
