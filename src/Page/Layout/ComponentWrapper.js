@@ -2,14 +2,13 @@ import RoundedIconWrapper from "../Edit/RoundedIconWrapper";
 import Bin from "../../Asset/Bin.svg";
 import Pallet from "../../Asset/pallet.svg";
 import { useCallback, useContext, useRef, useState } from "react";
-import { ArrContext } from "../Edit/Store";
+import useStore from "../Edit/Store/Store";
 function ComponentWrapper({ children, className, id }) {
   const refchild = useRef(null);
-  const [arrPresent, setArrPresent] = useContext(ArrContext);
+  const deletefunc = useStore((state) => state.deletePresent);
   const deleteComponent = () => {
     let id = refchild.current.offsetParent.offsetParent.id;
-    arrPresent.splice(id, 1);
-    setArrPresent(arrPresent);
+    deletefunc(id);
   };
   return (
     <div className={` ${className} relative group`} id={id}>

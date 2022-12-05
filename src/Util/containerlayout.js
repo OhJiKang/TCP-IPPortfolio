@@ -5,7 +5,7 @@ import Education2 from "../Page/Layout/Education2";
 import Experience from "../Page/Layout/Experience";
 import Project1 from "../Page/Layout/Project1";
 import CV1 from "../Page/Layout/CV1";
-import Contact from "../Page/Layout/Contact";
+import Contact1 from "../Page/Layout/Contact1";
 import AboutMe1IMG from "../Asset/About_me_1.png";
 import AboutMe2IMG from "../Asset/About_me_2.png";
 import Experience1IMG from "../Asset/Experiece_1.png";
@@ -15,22 +15,22 @@ import MyCV1IMG from "../Asset/CV_1.png";
 import Contact1IMG from "../Asset/Contact_1.png";
 import Project1IMG from "../Asset/Project_1.png";
 const aboutMeContainer = [
-  { key: "AboutMe0", component: AboutMe1, id: 0, image: AboutMe1IMG },
-  { key: "AboutMe1", component: AboutMe2, id: 1, image: AboutMe2IMG },
+  { key: "AboutMe0", Component: AboutMe1, id: 0, image: AboutMe1IMG },
+  { key: "AboutMe1", Component: AboutMe2, id: 1, image: AboutMe2IMG },
 ];
 const educationContainer = [
-  { key: "Education0", component: Education1, id: 100, image: Education1IMG },
-  { key: "Education1", component: Education2, id: 101, image: Education2IMG },
+  { key: "Education0", Component: Education1, id: 100, image: Education1IMG },
+  { key: "Education1", Component: Education2, id: 101, image: Education2IMG },
 ];
 const experienceContainer = [
-  { key: "experience0", component: Experience, id: 200, image: Experience1IMG },
+  { key: "experience0", Component: Experience, id: 200, image: Experience1IMG },
 ];
 const Project = [
-  { key: "Project0", component: Project1, id: 300, image: Project1IMG },
+  { key: "Project0", Component: Project1, id: 300, image: Project1IMG },
 ];
-const CVContainer = [{ key: "CV0", component: CV1, id: 400, image: MyCV1IMG }];
+const CVContainer = [{ key: "CV0", Component: CV1, id: 400, image: MyCV1IMG }];
 const ContactContainer = [
-  { key: "Contact0", component: Contact, id: 500, image: Contact1IMG },
+  { key: "Contact0", Component: Contact1, id: 500, image: Contact1IMG },
 ];
 export {
   aboutMeContainer,
