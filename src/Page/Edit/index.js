@@ -10,39 +10,35 @@ import {
   experienceContainer,
   Project,
 } from "../../Util/containerlayout";
-import { ArrContext } from "./Store";
+import useStore from "./Store/Store";
 function PageTest3() {
-  const [arrPresent, setArrPresent] = useContext(ArrContext);
+  const arrPresent = useStore((state) => state.arrPresent);
+  console.log(arrPresent);
+  const addArr = useStore((state) => state.addPresent);
   const getPos = (event) => {
     switch (event.source.droppableId) {
       case "aboutMeContainer": {
-        arrPresent.push(aboutMeContainer[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(aboutMeContainer[event.source.index]);
         break;
       }
       case "WorkExperienceContainer": {
-        arrPresent.push(experienceContainer[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(experienceContainer[event.source.index]);
         break;
       }
       case "EducationContainer": {
-        arrPresent.push(educationContainer[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(educationContainer[event.source.index]);
         break;
       }
       case "ProjectContainer": {
-        arrPresent.push(Project[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(Project[event.source.index]);
         break;
       }
       case "ContactContainer": {
-        arrPresent.push(ContactContainer[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(ContactContainer[event.source.index]);
         break;
       }
       case "CVContainer": {
-        arrPresent.push(CVContainer[event.source.index]);
-        setArrPresent(arrPresent);
+        addArr(CVContainer[event.source.index]);
         break;
       }
       default: {

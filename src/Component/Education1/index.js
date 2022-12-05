@@ -1,9 +1,12 @@
 import Section from "../../Page/Layout/Section";
 
-function Education1Compo() {
+function Education1Compo({ increaseStatefunc }) {
   return (
     <div>
-      <Section className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white">
+      <Section
+        increaseStatefunc={increaseStatefunc}
+        className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white"
+      >
         <p className="text-[18px]">Student at Ton Duc Thang University</p>
         <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">
           Sep 2021 - 2077
