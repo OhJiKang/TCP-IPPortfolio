@@ -6,10 +6,10 @@ import RoundedIconWrapper from "./RoundedIconWrapper";
 import { useContext, useEffect, useRef, useState } from "react";
 import { aboutMeContainer } from "../../Util/containerlayout";
 import { Droppable } from "react-beautiful-dnd";
-import { ArrContext } from "./Store";
+import useStore from "./Store/Store";
 function Edit() {
-  const [ArrPresent, setArrPresent] = useContext(ArrContext);
-
+  const arrPresent = useStore((state) => state.arrPresent);
+  console.log(arrPresent);
   return (
     <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
       <Droppable droppableId="Drop_Place">
@@ -33,9 +33,13 @@ function Edit() {
                     <img src={Bin} />
                   </RoundedIconWrapper>
                 </div>
-                {ArrPresent.length !== 0 &&
-                  ArrPresent.map(({ key, component, id, image }, index) => {
-                    return <div key={index}>{component({ index })}</div>;
+                {arrPresent.length !== 0 &&
+                  arrPresent.map(({ key, Component, id, image }, index) => {
+                    return (
+                      <div key={index}>
+                        {<Component key={`Com_${index}`} />}
+                      </div>
+                    );
                   })}
                 {provided.placeholder}
               </div>
