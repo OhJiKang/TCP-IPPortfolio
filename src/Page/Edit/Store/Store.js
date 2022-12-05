@@ -1,11 +1,15 @@
 import create from "zustand";
+import { devtools, persist } from "zustand/middleware";
 import produce from "immer";
-const useStore = create((set) => ({
+import reactElementToJSXString from "react-element-to-jsx-string";
+import { isValidElement } from "react";
+import ReactDOMServer from "react-dom/server";
+let store = (set) => ({
   arrPresent: [],
   addPresent: (Componeedtoadd) =>
     set(
       produce((state) => {
-        state.arrPresent.push(Componeedtoadd);
+        state.arrPresent = [...state.arrPresent, Componeedtoadd];
       })
     ),
   deletePresent: (index) =>
@@ -14,6 +18,6 @@ const useStore = create((set) => ({
         state.arrPresent.splice(index, 1);
       })
     ),
-}));
-
+});
+const useStore = create(store);
 export default useStore;

@@ -5,11 +5,25 @@ function ExperienceComp1({ increaseStatefunc }) {
       increaseStatefunc={increaseStatefunc}
       className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white"
     >
-      <p className="text-[18px]">Cong ty Lua dao</p>
-      <p className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]">
+      <p
+        className="text-[18px]"
+        contentEditable
+        suppressContentEditableWarning={true}
+      >
+        Cong ty Lua dao
+      </p>
+      <p
+        className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]"
+        contentEditable
+        suppressContentEditableWarning={true}
+      >
         2019 - 2077
       </p>
-      <p className="mx-[10px] mt-[10px] text-[14px] leading-[19px]">
+      <p
+        className="mx-[10px] mt-[10px] text-[14px] leading-[19px]"
+        contentEditable
+        suppressContentEditableWarning={true}
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea

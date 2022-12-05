@@ -12,8 +12,6 @@ import {
 } from "../../Util/containerlayout";
 import useStore from "./Store/Store";
 function PageTest3() {
-  const arrPresent = useStore((state) => state.arrPresent);
-  console.log(arrPresent);
   const addArr = useStore((state) => state.addPresent);
   const getPos = (event) => {
     switch (event.source.droppableId) {
