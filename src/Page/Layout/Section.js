@@ -1,6 +1,18 @@
+import { useReducer } from "react";
 import Bin from "../../Asset/Bin.svg";
-
-function Section({ children, className, increaseStatefunc }) {
+import useStore from "../Edit/Store/Store";
+function Section({
+  children,
+  className,
+  increaseStatefunc,
+  id,
+  decreaseStateFunc,
+}) {
+  const deleteFunc = (e) => {
+    const fatherIndex =
+      e.target.offsetParent.offsetParent.offsetParent.offsetParent.id;
+    decreaseStateFunc(fatherIndex, id);
+  };
   return (
     <div className={`${className} relative group/section`}>
       {children}
@@ -12,7 +24,7 @@ function Section({ children, className, increaseStatefunc }) {
           +
         </div>
         <div className="h-[40px] cursor-pointer flex justify-center items-center ">
-          <img className="brightness-0 invert" src={Bin} />
+          <img className="brightness-0 invert" src={Bin} onClick={deleteFunc} />
         </div>
       </div>
     </div>

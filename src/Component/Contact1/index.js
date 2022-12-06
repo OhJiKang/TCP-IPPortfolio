@@ -6,6 +6,7 @@ function Contact1Compo({
   id,
   titledes,
   linkdes,
+  decreaseStateFunc,
 }) {
   const ChangeLink = (e) => {
     ChangeLinkfunc(e.target.id, e.target.value);
@@ -15,6 +16,8 @@ function Contact1Compo({
   };
   return (
     <Section
+      decreaseStateFunc={decreaseStateFunc}
+      id={id}
       increaseStatefunc={increaseStatefunc}
       className="w-[740px] bg-c3 py-[20px] px-[40px] font-para border-c4 rounded-[40px] border-[2px] text-white"
     >
