@@ -12,10 +12,29 @@ let store = (set) => ({
         state.arrPresent = [...state.arrPresent, Componeedtoadd];
       })
     ),
+  PartArr: [],
   deletePresent: (index) =>
     set(
-      produce((state) => {
+      produce((state, remainPart) => {
         state.arrPresent.splice(index, 1);
+        state.PartArr = remainPart;
+      })
+    ),
+  addPart: (parttoadd) =>
+    set(
+      produce((state) => {
+        const newArr = [...state.PartArr, ...parttoadd].flat();
+        console.log(newArr);
+        const ArrRemain = [];
+        newArr.map((x) =>
+          ArrRemain.filter(
+            (a) => a.id == x.id && a.Fatherindex == x.Fatherindex
+          ).length > 0
+            ? null
+            : ArrRemain.push(x)
+        );
+
+        state.PartArr = [...ArrRemain];
       })
     ),
 });

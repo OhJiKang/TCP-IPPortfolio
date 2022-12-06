@@ -5,11 +5,9 @@ import Section from "./Section";
 function Experience1({ index }) {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const [numofExperience1, setnumofExperience1] = useState([ExperienceComp1]);
-  console.log(numofExperience1);
   const IncreaseElement = () => {
     numofExperience1.push(ExperienceComp1);
     setnumofExperience1(numofExperience1);
-    console.log(numofExperience1);
     forceUpdate();
   };
   return (

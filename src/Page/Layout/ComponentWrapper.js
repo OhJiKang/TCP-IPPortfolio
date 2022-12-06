@@ -6,9 +6,14 @@ import useStore from "../Edit/Store/Store";
 function ComponentWrapper({ children, className, id }) {
   const refchild = useRef(null);
   const deletefunc = useStore((state) => state.deletePresent);
+  const PresentArr = useStore((state) => state.arrPresent);
+  const partArr = useStore((state) => state.PartArr);
   const deleteComponent = () => {
     let id = refchild.current.offsetParent.offsetParent.id;
-    deletefunc(id);
+    let keyfather = PresentArr[id];
+    let ArrtoDel = partArr.filter((item) => item.FatherComponent == keyfather);
+    const ArrRemain = partArr.filter((item) => !ArrtoDel.includes(item));
+    deletefunc(id, ArrRemain);
   };
   return (
     <div className={` ${className} relative group`} id={id}>

@@ -6,11 +6,9 @@ import Section from "./Section";
 function Project1({ index }) {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const [numofProject1, setnumofProject1] = useState([Project1Com]);
-  console.log(numofProject1);
   const IncreaseElement = () => {
     numofProject1.push(Project1Com);
     setnumofProject1(numofProject1);
-    console.log(numofProject1);
     forceUpdate();
   };
   return (

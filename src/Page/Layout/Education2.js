@@ -7,11 +7,9 @@ import Section from "./Section";
 function Education2({ index }) {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const [numofEducation2, setnumofEducation2] = useState([Education2_Compo]);
-  console.log(numofEducation2);
   const IncreaseElement = () => {
     numofEducation2.push(Education2_Compo);
     setnumofEducation2(numofEducation2);
-    console.log(numofEducation2);
     forceUpdate();
   };
   return (
