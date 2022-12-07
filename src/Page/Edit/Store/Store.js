@@ -16,11 +16,22 @@ let store = (set) => ({
   deletePresent: (index, remainPart) =>
     set(
       produce((state) => {
-        state.arrPresent.splice(index, 1);
         if (remainPart == undefined) {
           remainPart = [];
         }
-        state.PartArr = remainPart;
+        let k = [];
+        if (index < state.arrPresent.length - 1) {
+          remainPart.forEach((element) => {
+            if (element.Fatherindex > index) {
+              let arrCopy = { ...element };
+              arrCopy["Fatherindex"] = arrCopy["Fatherindex"] - 1;
+              element = arrCopy;
+            }
+            k.push(element);
+          });
+        }
+        state.arrPresent.splice(index, 1);
+        state.PartArr = k;
       })
     ),
   addPart: (parttoadd) =>
@@ -30,6 +41,7 @@ let store = (set) => ({
         let tmpArr = [];
         const ArrRemain = [];
         const filterArr = [];
+        console.log(newArr);
         newArr.map((x) =>
           ArrRemain.filter(
             (a) => a.id == x.id && a.Fatherindex == x.Fatherindex
@@ -51,18 +63,16 @@ let store = (set) => ({
   addforUpload: (parttoadd) =>
     set(
       produce((state) => {
-        let letarr = [];
-        const newArr = [...parttoadd].flat();
-        const ArrRemain = [];
+        const newArr = [...parttoadd, ...state.PartArr].flat();
         const filterArr = [];
         newArr.map((x) =>
-          ArrRemain.filter(
+          filterArr.filter(
             (a) => a.id == x.id && a.Fatherindex == x.Fatherindex
           ).length > 0
             ? null
-            : ArrRemain.push(x)
+            : filterArr.push(x)
         );
-        state.PartArr = ArrRemain;
+        state.PartArr = filterArr;
       })
     ),
   deletePart: (index) =>

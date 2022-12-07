@@ -3,7 +3,7 @@ import Cover from "../../Asset/Cover.png";
 import ImageIcon from "../../Asset/ImageIcon.svg";
 import Bin from "../../Asset/Bin.svg";
 import RoundedIconWrapper from "./RoundedIconWrapper";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useReducer, useRef, useState } from "react";
 import {
   aboutMeContainer,
   ContactContainer,
@@ -26,13 +26,14 @@ function Edit() {
   ];
   let arrPresent = useStore((state) => state.arrPresent);
   let returnArr = [];
+  const [count, forceUpdate] = useState(0);
   for (let i of arrPresent) {
     returnArr = [
       ...returnArr,
       sumofArr.filter((component) => i === component.key)[0],
     ];
   }
-  console.log(returnArr);
+
   return (
     <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
       <Droppable droppableId="Drop_Place">
@@ -65,7 +66,14 @@ function Edit() {
                   returnArr.map(({ key, Component, id, image }, index) => {
                     return (
                       <div key={index}>
-                        {<Component index={index} key={`Com_${index}`} />}
+                        {
+                          <Component
+                            rerenderprob={count}
+                            rerenderfunc={forceUpdate}
+                            index={index}
+                            key={`Com_${index}`}
+                          />
+                        }
                       </div>
                     );
                   })}

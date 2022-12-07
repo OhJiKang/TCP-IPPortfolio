@@ -3,7 +3,7 @@ import Contact1Compo from "../../Component/Contact1";
 import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
-function Contact1({ index, ChangeTitlefunc }) {
+function Contact1({ index, rerenderfunc, rerenderprob }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -62,9 +62,11 @@ function Contact1({ index, ChangeTitlefunc }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["title"] = value;
     let newArr1 = [...partArr];
-    newArr1[arrCopy["id"] - 1] = arrCopy;
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
     let newArr2 = [...numofContact1];
-    newArr2[arrCopy["id"] - 1] = arrCopy;
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
     setnumofContact1(newArr2);
     addUpdate(newArr1);
     forceUpdate();
@@ -74,9 +76,11 @@ function Contact1({ index, ChangeTitlefunc }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["link"] = value;
     let newArr1 = [...partArr];
-    newArr1[arrCopy["id"] - 1] = arrCopy;
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
     let newArr2 = [...numofContact1];
-    newArr2[arrCopy["id"] - 1] = arrCopy;
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
     setnumofContact1(newArr2);
     addUpdate(newArr1);
     forceUpdate();
@@ -113,9 +117,8 @@ function Contact1({ index, ChangeTitlefunc }) {
     } else {
       ArrRemain = partArr;
     }
-    console.log(ArrRemain);
     deleteComp(id, ArrRemain);
-    forceUpdate();
+    rerenderfunc(rerenderprob + 1);
   };
   return (
     <ComponentWrapper

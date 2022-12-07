@@ -14,7 +14,6 @@ function Education1({ index }) {
   let NewarrEducation = getArr.filter(
     (item) => item.Fatherindex == index && item.FatherComponent == "Education0"
   );
-
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
@@ -64,9 +63,11 @@ function Education1({ index }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["title"] = value;
     let newArr1 = [...partArr];
-    newArr1[arrCopy["id"] - 1] = arrCopy;
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
     let newArr2 = [...numofEducation1];
-    newArr2[arrCopy["id"] - 1] = arrCopy;
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
     setnumofEducation1(newArr2);
     addUpdate(newArr1);
     forceUpdate();
@@ -76,9 +77,11 @@ function Education1({ index }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["link"] = value;
     let newArr1 = [...partArr];
-    newArr1[arrCopy["id"] - 1] = arrCopy;
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
     let newArr2 = [...numofEducation1];
-    newArr2[arrCopy["id"] - 1] = arrCopy;
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
     setnumofEducation1(newArr2);
     addUpdate(newArr1);
     forceUpdate();
@@ -88,9 +91,11 @@ function Education1({ index }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["time"] = value;
     let newArr1 = [...partArr];
-    newArr1[arrCopy["id"] - 1] = arrCopy;
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
     let newArr2 = [...numofEducation1];
-    newArr2[arrCopy["id"] - 1] = arrCopy;
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
     setnumofEducation1(newArr2);
     addUpdate(newArr1);
     forceUpdate();
@@ -127,8 +132,8 @@ function Education1({ index }) {
     } else {
       ArrRemain = partArr;
     }
-    console.log(ArrRemain);
     deleteComp(id, ArrRemain);
+    window.location.reload();
     forceUpdate();
   };
   return (
