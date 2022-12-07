@@ -6,13 +6,16 @@ function Education2_Compo({
   ChangeLinkfunc,
   ChangeTitlefunc,
   ChangeImagefunc,
+  ChangeTimefunc,
   id,
   image,
-  ChangeTimefunc,
   titledes,
   linkdes,
   datedes,
   decreaseStateFunc,
+  index,
+  keymame,
+  fatherindx,
 }) {
   const ChangeLink = (e) => {
     ChangeLinkfunc(e.target.id, e.target.value);
@@ -26,7 +29,7 @@ function Education2_Compo({
 
   const onImageChange = (event) => {
     const URLIMAGE = URL.createObjectURL(event.target.files[0]);
-    ChangeImagefunc(event.target.id, URLIMAGE);
+    ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
 
   return (
@@ -39,9 +42,14 @@ function Education2_Compo({
       >
         <div className=" relative w-[200px] h-[140px] border-c4 border-[2px] rounded-[10px] shrink-0 overflow-hidden">
           <div>
-            <label for={id} class="absolute btn h-[100%] w-[100%]"></label>
+            <label
+              htmlFor={keymame}
+              className="absolute btn h-[100%] w-[100%]"
+            ></label>
             <input
-              id={id}
+              ind={index}
+              id={keymame}
+              idname={id}
               type="file"
               onChange={onImageChange}
               className="  invisible absolute filetype z-0	 "

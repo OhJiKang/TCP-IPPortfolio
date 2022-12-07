@@ -4,7 +4,7 @@ import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
 import TDT from "../../Asset/TDT.png";
-function Education2({ index }) {
+function Education2({ faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -13,14 +13,15 @@ function Education2({ index }) {
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrEducation = getArr.filter(
-    (item) => item.Fatherindex == index && item.FatherComponent == "Education1"
+    (item) =>
+      item.Fatherindex == faindex && item.FatherComponent == "Education1"
   );
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
       id: 1,
       FatherComponent: "Education1",
-      Fatherindex: index,
+      Fatherindex: faindex,
       key: "Education2Compo",
       Component: Education2Compo,
       title: "Student at Ton Duc Thang University",
@@ -48,7 +49,7 @@ function Education2({ index }) {
       {
         id: idtoadd,
         FatherComponent: "Education1",
-        Fatherindex: index,
+        Fatherindex: faindex,
         key: "Education2Compo",
         Component: Education2Compo,
         title: "Student at Ton Duc Thang University",
@@ -156,7 +157,7 @@ function Education2({ index }) {
   return (
     <ComponentWrapper
       className="py-[60px] bg-c1"
-      id={index}
+      id={faindex}
       deleteFunc={deleteComponent}
       increaseStatefunc={IncreaseElement}
     >
@@ -179,7 +180,8 @@ function Education2({ index }) {
               ChangeImagefunc={changeImage}
               id={id}
               increaseStatefunc={IncreaseElement}
-              key={`Little_Part_${index}`}
+              key={`Little_Part_${index}_${id}`}
+              keymame={`Little_Part_${faindex}_${id}`}
             />
           )
         )}

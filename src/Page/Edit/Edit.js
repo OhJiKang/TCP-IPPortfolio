@@ -70,7 +70,7 @@ function Edit() {
                           <Component
                             rerenderprob={count}
                             rerenderfunc={forceUpdate}
-                            index={index}
+                            faindex={index}
                             key={`Com_${index}`}
                           />
                         }
