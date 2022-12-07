@@ -23,8 +23,11 @@ function Section({
         >
           +
         </div>
-        <div className="h-[40px] cursor-pointer flex justify-center items-center ">
-          <img className="brightness-0 invert" src={Bin} onClick={deleteFunc} />
+        <div
+          className="h-[40px] cursor-pointer flex justify-center items-center "
+          onClick={deleteFunc}
+        >
+          <img className="brightness-0 invert" src={Bin} />
         </div>
       </div>
     </div>

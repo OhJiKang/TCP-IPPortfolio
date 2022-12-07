@@ -60,9 +60,12 @@ function Project1({ faindex }) {
     addPart(newnumofProject1);
     forceUpdate();
   };
-  const ChangeTitle = (id, value) => {
+  const ChangeTitle = (id, value, index) => {
     const arrneedtoChange = numofProject1.find(
-      (item) => id == item.id && item.FatherComponent == "Project0"
+      (item) =>
+        id == item.id &&
+        index == item.Fatherindex &&
+        item.FatherComponent == "Project0"
     );
     let arrCopy = { ...arrneedtoChange };
     arrCopy["title"] = value;
@@ -76,10 +79,13 @@ function Project1({ faindex }) {
     addUpdate(newArr1);
     forceUpdate();
   };
-  const ChangeLink = (id, value) => {
+  const ChangeLink = (id, value, index) => {
     console.log(id);
     const arrneedtoChange = numofProject1.find(
-      (item) => id == item.id && item.FatherComponent == "Project0"
+      (item) =>
+        id == item.id &&
+        index == item.Fatherindex &&
+        item.FatherComponent == "Project0"
     );
     let arrCopy = { ...arrneedtoChange };
     arrCopy["link"] = value;

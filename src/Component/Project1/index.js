@@ -15,10 +15,14 @@ function Project1Com({
   fatherindx,
 }) {
   const ChangeLink = (e) => {
-    ChangeLinkfunc(e.target.id, e.target.value);
+    ChangeLinkfunc(e.target.getAttribute("idname"), e.target.value, fatherindx);
   };
   const ChangeTitle = (e) => {
-    ChangeTitlefunc(e.target.id, e.target.value);
+    ChangeTitlefunc(
+      e.target.getAttribute("idname"),
+      e.target.value,
+      fatherindx
+    );
   };
 
   const onImageChange = (event) => {
@@ -50,13 +54,17 @@ function Project1Com({
       <div className="ml-[20px]">
         <textarea
           rows="1"
-          id={id}
+          ind={index}
+          id={keymame}
+          idname={id}
           value={`${titledes}`}
           onChange={ChangeTitle}
           className="text-[18px]  outline-0	w-[100%] bg-transparent"
         ></textarea>
         <textarea
-          id={id}
+          ind={index}
+          id={keymame}
+          idname={id}
           value={`${linkdes}`}
           rows="6"
           onChange={ChangeLink}
