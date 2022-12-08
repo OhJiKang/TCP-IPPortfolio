@@ -3,7 +3,7 @@ import { useEffect, useReducer, useState } from "react";
 import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Dog from "../../Asset/Dog.png";
-function AboutMe1({ faindex }) {
+function AboutMe1({ faindex, rerenderfunc }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -135,8 +135,7 @@ function AboutMe1({ faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    window.location.reload();
-    forceUpdate();
+    rerenderfunc();
   };
   const changeImage = (id, URL) => {
     const arrneedtoChange = numofAboutme1.find((item) => id == item.id);

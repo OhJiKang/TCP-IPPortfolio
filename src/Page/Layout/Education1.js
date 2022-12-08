@@ -3,7 +3,7 @@ import { useEffect, useReducer, useState } from "react";
 import ComponentWrapper from "./ComponentWrapper";
 import useStore from "../Edit/Store/Store";
 import Section from "./Section";
-function Education1({ faindex }) {
+function Education1({ rerenderfunc, faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -134,8 +134,7 @@ function Education1({ faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    window.location.reload();
-    forceUpdate();
+    rerenderfunc();
   };
   return (
     <ComponentWrapper

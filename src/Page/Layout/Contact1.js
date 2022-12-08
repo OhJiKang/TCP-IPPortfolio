@@ -3,7 +3,7 @@ import Contact1Compo from "../../Component/Contact1";
 import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
-function Contact1({ index, rerenderfunc, rerenderprob }) {
+function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -12,19 +12,19 @@ function Contact1({ index, rerenderfunc, rerenderprob }) {
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrContact = getArr.filter(
-    (item) => item.Fatherindex == index && item.FatherComponent == "Contact0"
+    (item) => item.Fatherindex == faindex && item.FatherComponent == "Contact0"
   );
-
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
       id: 1,
       FatherComponent: "Contact0",
-      Fatherindex: index,
+      Fatherindex: faindex,
       key: "Contact1Compo",
       Component: Contact1Compo,
       title: "Facebook",
-      link: "facebook.com/abcxyz",
+      link: "facebook.com/xyz",
+      time: "Sep 2021 - 2077",
     },
   ];
   if (NewarrContact.length != 0) {
@@ -46,11 +46,12 @@ function Contact1({ index, rerenderfunc, rerenderprob }) {
       {
         id: idtoadd,
         FatherComponent: "Contact0",
-        Fatherindex: index,
+        Fatherindex: faindex,
         key: "Contact1Compo",
         Component: Contact1Compo,
         title: "Facebook",
-        link: "facebook.com/abcxyz",
+        link: "facebook.com/xyz",
+        time: "Sep 2021 - 2077",
       },
     ];
     setnumofContact1(newnumofContact1);
@@ -108,6 +109,7 @@ function Contact1({ index, rerenderfunc, rerenderprob }) {
   };
   const deleteComponent = (id) => {
     let keyfather = PresentArr[id];
+    console.log(keyfather);
     let ArrtoDel = partArr.filter(
       (item) => item.FatherComponent == keyfather && item.Fatherindex == id
     );
@@ -118,14 +120,15 @@ function Contact1({ index, rerenderfunc, rerenderprob }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    rerenderfunc(rerenderprob + 1);
+    rerenderfunc();
   };
+
   return (
     <ComponentWrapper
       deleteFunc={deleteComponent}
       increaseStatefunc={IncreaseElement}
+      id={faindex}
       className="w-full py-[60px] bg-c1"
-      id={index}
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
         <div className="absolute w-[100px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -141,7 +144,8 @@ function Contact1({ index, rerenderfunc, rerenderprob }) {
             ChangeLinkfunc={ChangeLink}
             id={id}
             increaseStatefunc={IncreaseElement}
-            key={`Little_Part_${index}`}
+            key={`Little_Part_${index}_${id}`}
+            keymame={`Little_Part_${faindex}_${id}`}
           />
         ))}
       </div>
