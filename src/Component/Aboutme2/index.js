@@ -28,7 +28,7 @@ function Aboutme2Compo({
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
   return (
-    <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px]">
+    <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px] m-auto">
       <div className="absolute top-1/2 left-0 border-[5px] rounded-full h-[200px] w-[200px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
         <div className="relative">
           <label
@@ -46,7 +46,7 @@ function Aboutme2Compo({
           <img src={image} alt="preview image" />
         </div>
       </div>
-      <div className="w-[580px] text-white bg-c3 border-c4 border-[2px] rounded-[40px] text-left font-para px-[20px] py-[10px]">
+      <div className="w-[580px] bg-c3 border-c4 border-[2px] rounded-[40px] text-left font-para px-[20px] py-[10px]">
         <textarea
           rows="1"
           id={id}

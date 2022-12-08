@@ -155,7 +155,7 @@ function AboutMe2({ faindex }) {
   };
   return (
     <ComponentWrapper
-      className=" w-full pt-[90px] pb-[30px] bg-[url('../Asset/AboutmeBackground1.png')]"
+      className=" w-full pt-[90px] pb-[30px] bg-c1 bg-cover"
       deleteFunc={deleteComponent}
       increaseStatefunc={IncreaseElement}
       id={faindex}

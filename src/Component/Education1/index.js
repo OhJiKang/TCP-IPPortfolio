@@ -26,7 +26,7 @@ function Education1Compo({
         decreaseStateFunc={decreaseStateFunc}
         id={id}
         increaseStatefunc={increaseStatefunc}
-        className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white"
+        className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px]"
       >
         <textarea
           rows="1"

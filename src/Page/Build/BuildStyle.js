@@ -15,6 +15,7 @@ function BuildStyle({ style, setStyle }) {
       e.currentTarget.getAttribute("index")
     );
     setStyle(e.currentTarget.getAttribute("index"));
+    let id = e.currentTarget.getAttribute("index");
   };
 
   return (
