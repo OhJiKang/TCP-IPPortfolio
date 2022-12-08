@@ -137,8 +137,7 @@ function Education2({ rerenderfunc, faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    window.location.reload();
-    forceUpdate();
+    rerenderfunc();
   };
   const changeImage = (id, URL) => {
     const arrneedtoChange = numofEducation2.find((item) => id == item.id);
@@ -152,7 +151,7 @@ function Education2({ rerenderfunc, faindex }) {
     newArr2[indx] = arrCopy;
     setnumofEducation2(newArr2);
     addUpdate(newArr1);
-    rerenderfunc();
+    forceUpdate();
   };
   return (
     <ComponentWrapper
