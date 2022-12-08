@@ -4,7 +4,7 @@ import useStore from "../Edit/Store/Store";
 import { useEffect, useReducer, useState } from "react";
 import Aboutme2Compo from "../../Component/Aboutme2";
 
-function AboutMe2({ faindex }) {
+function AboutMe2({ faindex, rerenderfunc }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -137,7 +137,7 @@ function AboutMe2({ faindex }) {
     }
     deleteComp(id, ArrRemain);
     window.location.reload();
-    forceUpdate();
+    rerenderfunc();
   };
   const changeImage = (id, URL) => {
     const arrneedtoChange = numofAboutme2.find((item) => id == item.id);

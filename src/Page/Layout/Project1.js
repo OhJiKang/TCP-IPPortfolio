@@ -4,7 +4,7 @@ import Computer from "../../Asset/Computer.png";
 import Project1Com from "../../Component/Project1";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
-function Project1({ faindex }) {
+function Project1({ rerenderfunc, faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -153,8 +153,7 @@ function Project1({ faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    window.location.reload();
-    forceUpdate();
+    rerenderfunc();
   };
   return (
     <ComponentWrapper

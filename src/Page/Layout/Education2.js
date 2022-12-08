@@ -4,7 +4,7 @@ import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
 import TDT from "../../Asset/TDT.png";
-function Education2({ faindex }) {
+function Education2({ rerenderfunc, faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -152,7 +152,7 @@ function Education2({ faindex }) {
     newArr2[indx] = arrCopy;
     setnumofEducation2(newArr2);
     addUpdate(newArr1);
-    forceUpdate();
+    rerenderfunc();
   };
   return (
     <ComponentWrapper
