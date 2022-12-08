@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TCP-IPPortfolio/static/css/main.3be2751e.css",
-    "main.js": "/TCP-IPPortfolio/static/js/main.19255262.js",
+    "main.css": "/TCP-IPPortfolio/static/css/main.3f587328.css",
+    "main.js": "/TCP-IPPortfolio/static/js/main.508eacda.js",
     "static/js/787.9e83e489.chunk.js": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js",
     "static/media/start-image.png": "/TCP-IPPortfolio/static/media/start-image.cdacf989f0772206c242.png",
     "static/media/Dog.png": "/TCP-IPPortfolio/static/media/Dog.0621bed05528eeee8659.png",
@@ -23,7 +23,6 @@
     "static/media/EducationBackground1.png": "/TCP-IPPortfolio/static/media/EducationBackground1.6d59c5baaf426a2d85f2.png",
     "static/media/About_me_2.png": "/TCP-IPPortfolio/static/media/About_me_2.a3d6390056641f989c5c.png",
     "static/media/About_me_1.png": "/TCP-IPPortfolio/static/media/About_me_1.177daeb5274fefc17e4b.png",
-    "static/media/AboutmeBackground2.png": "/TCP-IPPortfolio/static/media/AboutmeBackground2.fe5d0fa5dbf8e0885d1f.png",
     "static/media/Education_2.png": "/TCP-IPPortfolio/static/media/Education_2.4541bf788fbe8ec44bc0.png",
     "static/media/AboutmeBackground1.png": "/TCP-IPPortfolio/static/media/AboutmeBackground1.06836cb1cdc91ad7814c.png",
     "static/media/Education_1.png": "/TCP-IPPortfolio/static/media/Education_1.fc6a0561d1041198b3f7.png",
@@ -45,12 +44,12 @@
     "static/media/Open.svg": "/TCP-IPPortfolio/static/media/Open.617a271f6192f8c28e3e33f05d9fb588.svg",
     "static/media/RightArrow.svg": "/TCP-IPPortfolio/static/media/RightArrow.3a820f3bbfb9f5b6a8735bc447185896.svg",
     "static/media/Arrow.svg": "/TCP-IPPortfolio/static/media/Arrow.a618308712c4fd54111b891ebedc627e.svg",
-    "main.3be2751e.css.map": "/TCP-IPPortfolio/static/css/main.3be2751e.css.map",
-    "main.19255262.js.map": "/TCP-IPPortfolio/static/js/main.19255262.js.map",
+    "main.3f587328.css.map": "/TCP-IPPortfolio/static/css/main.3f587328.css.map",
+    "main.508eacda.js.map": "/TCP-IPPortfolio/static/js/main.508eacda.js.map",
     "787.9e83e489.chunk.js.map": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3be2751e.css",
-    "static/js/main.19255262.js"
+    "static/css/main.3f587328.css",
+    "static/js/main.508eacda.js"
   ]
 }
