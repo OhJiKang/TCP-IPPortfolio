@@ -17,13 +17,14 @@ function SidebarComponentWrapper({ name, children, dropID }) {
         {Children.toArray(children).map((e, index) => {
           return (
             <div
+              key={index}
               className={`w-[240px] ${
                 open
                   ? "my-3 h-fit max-h-[400px]"
                   : "max-h-0 h-0 my-0 border-none"
               } overflow-hidden duration-500 transition-all mx-auto my-3 flex flex-col justify-around`}
             >
-              <Droppable droppableId={`${dropID}`} key={index}>
+              <Droppable droppableId={`${dropID}`}>
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
                     {e}

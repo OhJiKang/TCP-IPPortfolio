@@ -12,33 +12,31 @@ import {
 } from "../../Util/containerlayout";
 import useStore from "./Store/Store";
 function PageTest3() {
-  const arrPresent = useStore((state) => state.arrPresent);
-  console.log(arrPresent);
   const addArr = useStore((state) => state.addPresent);
   const getPos = (event) => {
     switch (event.source.droppableId) {
       case "aboutMeContainer": {
-        addArr(aboutMeContainer[event.source.index]);
+        addArr(aboutMeContainer[event.source.index].key);
         break;
       }
       case "WorkExperienceContainer": {
-        addArr(experienceContainer[event.source.index]);
+        addArr(experienceContainer[event.source.index].key);
         break;
       }
       case "EducationContainer": {
-        addArr(educationContainer[event.source.index]);
+        addArr(educationContainer[event.source.index].key);
         break;
       }
       case "ProjectContainer": {
-        addArr(Project[event.source.index]);
+        addArr(Project[event.source.index].key);
         break;
       }
       case "ContactContainer": {
-        addArr(ContactContainer[event.source.index]);
+        addArr(ContactContainer[event.source.index].key);
         break;
       }
       case "CVContainer": {
-        addArr(CVContainer[event.source.index]);
+        addArr(CVContainer[event.source.index].key);
         break;
       }
       default: {

@@ -1,37 +1,183 @@
 import Dog from "../../Asset/Dog.png";
 import ComponentWrapper from "./ComponentWrapper";
+import useStore from "../Edit/Store/Store";
+import { useEffect, useReducer, useState } from "react";
+import Aboutme2Compo from "../../Component/Aboutme2";
 
-function AboutMe2({ index }) {
+function AboutMe2({ faindex }) {
+  const addPart = useStore((state) => state.addPart);
+  const addUpdate = useStore((state) => state.addforUpload);
+  let partArr = useStore((state) => state.PartArr);
+  const getArr = [...partArr];
+  const PresentArr = useStore((state) => state.arrPresent);
+  const deletefunc = useStore((state) => state.deletePart);
+  const deleteComp = useStore((state) => state.deletePresent);
+  let NewarrAboutme = getArr.filter(
+    (item) => item.Fatherindex == faindex && item.FatherComponent == "Aboutme0"
+  );
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  let InitValue = [
+    {
+      id: 1,
+      FatherComponent: "Aboutme0",
+      Fatherindex: faindex,
+      key: "Aboutme2Compo",
+      Component: Aboutme2Compo,
+      title: "Student at Ton Duc Thang University",
+      link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+      time: "Sep 2021 - 2077",
+      URL: Dog,
+    },
+  ];
+  if (NewarrAboutme.length != 0) {
+    InitValue = NewarrAboutme;
+  }
+  InitValue.forEach((i) => {
+    if (!i.hasOwnProperty("Component")) {
+      i["Component"] = Aboutme2Compo;
+    }
+  });
+  const [numofAboutme2, setnumofAboutme2] = useState(InitValue);
+  useEffect(() => {
+    addPart(numofAboutme2);
+  }, []);
+  const IncreaseElement = () => {
+    let idtoadd = numofAboutme2.length + 1;
+    let newnumofAboutme2 = [
+      ...numofAboutme2,
+      {
+        id: idtoadd,
+        FatherComponent: "Aboutme0",
+        Fatherindex: faindex,
+        key: "Aboutme2Compo",
+        Component: Aboutme2Compo,
+        title: "Student at Ton Duc Thang University",
+        link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+        time: "Sep 2021 - 2077",
+        URL: Dog,
+      },
+    ];
+    setnumofAboutme2(newnumofAboutme2);
+    addPart(newnumofAboutme2);
+    forceUpdate();
+  };
+  const ChangeTitle = (id, value) => {
+    const arrneedtoChange = numofAboutme2.find((item) => id == item.id);
+    let arrCopy = { ...arrneedtoChange };
+    arrCopy["title"] = value;
+    let newArr1 = [...partArr];
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
+    let newArr2 = [...numofAboutme2];
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
+    setnumofAboutme2(newArr2);
+    addUpdate(newArr1);
+    forceUpdate();
+  };
+  const ChangeLink = (id, value) => {
+    const arrneedtoChange = numofAboutme2.find((item) => id == item.id);
+    let arrCopy = { ...arrneedtoChange };
+    arrCopy["link"] = value;
+    let newArr1 = [...partArr];
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
+    let newArr2 = [...numofAboutme2];
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
+    setnumofAboutme2(newArr2);
+    addUpdate(newArr1);
+    forceUpdate();
+  };
+  const ChangeTime = (id, value) => {
+    const arrneedtoChange = numofAboutme2.find((item) => id == item.id);
+    let arrCopy = { ...arrneedtoChange };
+    arrCopy["time"] = value;
+    let newArr1 = [...partArr];
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
+    let newArr2 = [...numofAboutme2];
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
+    setnumofAboutme2(newArr2);
+    addUpdate(newArr1);
+    forceUpdate();
+  };
+  const decreaseStateFunc = (fatherIndex, id) => {
+    const fatherKey = PresentArr[fatherIndex];
+    let checkingArr = partArr.filter(
+      (item) =>
+        item.Fatherindex == fatherIndex && item.FatherComponent == fatherKey
+    );
+    if (checkingArr.length > 1) {
+      const deleteInx = partArr.findIndex(
+        (item) =>
+          item.id == id &&
+          item.Fatherindex == fatherIndex &&
+          item.FatherComponent == fatherKey
+      );
+      const deleteEle = partArr[deleteInx];
+      let numIndxinCompo = numofAboutme2.indexOf(deleteEle);
+      numofAboutme2.splice(numIndxinCompo, 1);
+      setnumofAboutme2(numofAboutme2);
+      deletefunc(deleteInx);
+    }
+    forceUpdate();
+  };
+  const deleteComponent = (id) => {
+    let keyfather = PresentArr[id];
+    let ArrtoDel = partArr.filter(
+      (item) => item.FatherComponent == keyfather && item.Fatherindex == id
+    );
+    let ArrRemain;
+    if (ArrtoDel.length != 0) {
+      ArrRemain = partArr.filter((item) => !ArrtoDel.includes(item));
+    } else {
+      ArrRemain = partArr;
+    }
+    deleteComp(id, ArrRemain);
+    window.location.reload();
+    forceUpdate();
+  };
+  const changeImage = (id, URL) => {
+    const arrneedtoChange = numofAboutme2.find((item) => id == item.id);
+    let arrCopy = { ...arrneedtoChange };
+    arrCopy["URL"] = URL;
+    let newArr1 = [...partArr];
+    let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr1[indx0] = arrCopy;
+    let newArr2 = [...numofAboutme2];
+    let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
+    newArr2[indx] = arrCopy;
+    setnumofAboutme2(newArr2);
+    addUpdate(newArr1);
+    forceUpdate();
+  };
   return (
     <ComponentWrapper
-      id={index}
-      className="w-full pl-[140px] py-[60px] flex flex-row items-center justify-around bg-cover bg-[url('../Asset/AboutmeBackground2.png')]"
+      className=" w-full pt-[90px] pb-[30px] bg-[url('../Asset/AboutmeBackground1.png')]"
+      deleteFunc={deleteComponent}
+      increaseStatefunc={IncreaseElement}
+      id={faindex}
     >
-      <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px]">
-        <div className="absolute top-1/2 left-0 border-[5px] rounded-full h-[200px] w-[200px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
-          <img src={Dog} />
-        </div>
-        <div className="w-[580px] text-white bg-c3 border-c4 border-[2px] rounded-[40px] text-left font-para px-[20px] py-[10px]">
-          <p className="text-[18px]">Hello my name is Gaugau</p>
-          <p className="text-[14px] leading-[19px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </div>
+      {numofAboutme2.map(({ link, title, id, URL, time, Component }, index) => (
+        <Component
+          decreaseStateFunc={decreaseStateFunc}
+          index={index}
+          titledes={title}
+          linkdes={link}
+          datedes={time}
+          image={URL}
+          ChangeTitlefunc={ChangeTitle}
+          ChangeLinkfunc={ChangeLink}
+          ChangeTimefunc={ChangeTime}
+          ChangeImagefunc={changeImage}
+          id={id}
+          increaseStatefunc={IncreaseElement}
+          key={`Little_Part_${index}_${id}`}
+          keymame={`Little_Part_${faindex}_${id}`}
+        />
+      ))}
     </ComponentWrapper>
   );
 }
