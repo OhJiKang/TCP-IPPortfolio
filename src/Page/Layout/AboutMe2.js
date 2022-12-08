@@ -13,13 +13,13 @@ function AboutMe2({ faindex }) {
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrAboutme = getArr.filter(
-    (item) => item.Fatherindex == faindex && item.FatherComponent == "Aboutme0"
+    (item) => item.Fatherindex == faindex && item.FatherComponent == "AboutMe1"
   );
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
       id: 1,
-      FatherComponent: "Aboutme0",
+      FatherComponent: "AboutMe1",
       Fatherindex: faindex,
       key: "Aboutme2Compo",
       Component: Aboutme2Compo,
@@ -47,7 +47,7 @@ function AboutMe2({ faindex }) {
       ...numofAboutme2,
       {
         id: idtoadd,
-        FatherComponent: "Aboutme0",
+        FatherComponent: "AboutMe1",
         Fatherindex: faindex,
         key: "Aboutme2Compo",
         Component: Aboutme2Compo,
