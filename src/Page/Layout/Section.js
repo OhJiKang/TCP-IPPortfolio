@@ -1,5 +1,7 @@
 import { useContext, useReducer } from "react";
-import { ReactComponent as Bin} from "../../Asset/Bin.svg";
+import Bin from "../../Asset/Bin.svg";
+import BlackBin from "../../Asset/BlackBin.svg";
+import WhiteBin from "../../Asset/WhiteBin.svg";
 import { TextColorContext } from "./ComponentWrapper";
 import useStore from "../Edit/Store/Store";
 function Section({
@@ -29,7 +31,7 @@ function Section({
           className="h-[40px] cursor-pointer flex justify-center items-center "
           onClick={deleteFunc}
         >
-          <Bin stroke={textColor}/>
+          {textColor === 'black' ? <img src={BlackBin}/> : <img src={WhiteBin}/>}
         </div>
       </div>
     </div>

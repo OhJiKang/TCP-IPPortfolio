@@ -1,5 +1,5 @@
 import RoundedIconWrapper from "../Edit/RoundedIconWrapper";
-import { ReactComponent as Bin } from "../../Asset/Bin.svg";
+import Bin from "../../Asset/Bin.svg";
 import Pallet from "../../Asset/pallet.svg";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import useStore from "../Edit/Store/Store";
@@ -69,7 +69,7 @@ function ComponentWrapper({ children, className, id, deleteFunc }) {
       </TextColorContext.Provider>
       <div className="absolute bottom-0 z-10 left-1/2 bg-white flex flex-row rounded-t-full rounded-b-full opacity-0 group-hover:opacity-100 duration-300 ease-in-out -translate-x-1/2 translate-y-1/2">
         <RoundedIconWrapper onClickfunc={deleteComponent}>
-          <Bin stroke="#80868B"/>
+          <img src={Bin}/>
         </RoundedIconWrapper>
         <RoundedIconWrapper onClickfunc={openModal}>
           <img src={Pallet} />
