@@ -136,7 +136,6 @@ function AboutMe2({ faindex, rerenderfunc }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
-    window.location.reload();
     rerenderfunc();
   };
   const changeImage = (id, URL) => {

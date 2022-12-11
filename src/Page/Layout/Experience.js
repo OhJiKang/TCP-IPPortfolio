@@ -13,7 +13,7 @@ function Experience1({ rerenderfunc, faindex }) {
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrExperience = getArr.filter(
     (item) =>
-      item.Fatherindex == faindex && item.FatherComponent == "Experience0"
+      item.Fatherindex == faindex && item.FatherComponent == "experience0"
   );
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
@@ -102,13 +102,11 @@ function Experience1({ rerenderfunc, faindex }) {
     forceUpdate();
   };
   const decreaseStateFunc = (fatherIndex, id) => {
-    console.log(id);
     const fatherKey = PresentArr[fatherIndex];
     let checkingArr = partArr.filter(
       (item) =>
         item.Fatherindex == fatherIndex && item.FatherComponent == fatherKey
     );
-    console.log(checkingArr);
     if (checkingArr.length > 1) {
       const deleteInx = partArr.findIndex(
         (item) =>

@@ -26,7 +26,6 @@ function Edit() {
   ];
   let arrPresent = useStore((state) => state.arrPresent);
   let returnArr = [];
-  console.log("re-rennder");
   const [count, forceUpdate] = useState(0);
   for (let i of arrPresent) {
     returnArr = [

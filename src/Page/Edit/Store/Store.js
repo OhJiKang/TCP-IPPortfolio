@@ -41,7 +41,6 @@ let store = (set) => ({
         let tmpArr = [];
         const ArrRemain = [];
         const filterArr = [];
-        console.log(newArr);
         newArr.map((x) =>
           ArrRemain.filter(
             (a) => a.id == x.id && a.Fatherindex == x.Fatherindex
@@ -63,7 +62,7 @@ let store = (set) => ({
   addforUpload: (parttoadd) =>
     set(
       produce((state) => {
-        const newArr = [...parttoadd, ...state.PartArr].flat();
+        const newArr = [...parttoadd, ...state.PartArr];
         const filterArr = [];
         newArr.map((x) =>
           filterArr.filter(
@@ -79,6 +78,20 @@ let store = (set) => ({
     set(
       produce((state) => {
         state.PartArr.splice(index, 1);
+      })
+    ),
+  colorArr: [],
+  setColorArr: (colortoadd) =>
+    set(
+      produce((state) => {
+        const newArr = [colortoadd, ...state.colorArr];
+        const filterArr = [];
+        newArr.map((x) =>
+          filterArr.filter((a) => a.idfa == x.idfa).length > 0
+            ? null
+            : filterArr.push(x)
+        );
+        state.colorArr = filterArr;
       })
     ),
 });

@@ -109,7 +109,6 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   };
   const deleteComponent = (id) => {
     let keyfather = PresentArr[id];
-    console.log(keyfather);
     let ArrtoDel = partArr.filter(
       (item) => item.FatherComponent == keyfather && item.Fatherindex == id
     );

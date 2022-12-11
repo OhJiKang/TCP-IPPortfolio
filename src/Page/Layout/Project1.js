@@ -15,7 +15,6 @@ function Project1({ rerenderfunc, faindex }) {
   let NewarrProject = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "Project0"
   );
-  console.log(NewarrProject);
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
@@ -80,7 +79,6 @@ function Project1({ rerenderfunc, faindex }) {
     forceUpdate();
   };
   const ChangeLink = (id, value, index) => {
-    console.log(id);
     const arrneedtoChange = numofProject1.find(
       (item) =>
         id == item.id &&
@@ -100,7 +98,6 @@ function Project1({ rerenderfunc, faindex }) {
     forceUpdate();
   };
   const changeImage = (id, URL, index) => {
-    console.log(index);
     const arrneedtoChange = numofProject1.find(
       (item) =>
         id == item.id &&
@@ -110,7 +107,6 @@ function Project1({ rerenderfunc, faindex }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["URL"] = URL;
     let newArr1 = [...partArr];
-    console.log(arrneedtoChange);
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
     let newArr2 = [...numofProject1];
