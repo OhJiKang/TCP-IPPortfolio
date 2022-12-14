@@ -11,6 +11,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrContact = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "Contact0"
   );
@@ -109,7 +110,6 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   };
   const deleteComponent = (id) => {
     let keyfather = PresentArr[id];
-    console.log(keyfather);
     let ArrtoDel = partArr.filter(
       (item) => item.FatherComponent == keyfather && item.Fatherindex == id
     );
@@ -120,6 +120,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
 
@@ -131,7 +132,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
       className="w-full py-[60px] bg-c1"
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[100px] h-[40px] border-c4 border-[5px] rounded-[10px] text-white font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[100px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Contact
         </div>
         {numofContact1.map(({ link, title, id, Component }, index) => (

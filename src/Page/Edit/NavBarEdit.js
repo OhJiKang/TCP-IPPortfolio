@@ -3,8 +3,21 @@ import Redo from "../../Asset/Redo.svg";
 import Undo from "../../Asset/Undo.svg";
 import Save from "../../Asset/Save.svg";
 import RoundedIconWrapper from "./RoundedIconWrapper";
-
+import * as ReactDOMServer from "react-dom/server";
+import PageTest3 from ".";
+import { useEffect } from "react";
+import Edit from "./Edit";
 function NavBarEdit() {
+  const DownloadHTML = () => {
+    const k = document.documentElement.outerHTML;
+    const element = document.createElement("a");
+    const file = new Blob([k], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.html";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
   return (
     <div className="font-para text-[18px] w-full h-[64px] justify-between fixed bg-white border-b-[1px] border-b-[#D8DADB] flex flex-row items-center p-[12px] z-10">
       <div className="flex flex-row items-center">
@@ -15,10 +28,13 @@ function NavBarEdit() {
         <RoundedIconWrapper className="m-2">
           <img src={Undo} />
         </RoundedIconWrapper>
-        <RoundedIconWrapper className="m-2" >
+        <RoundedIconWrapper className="m-2">
           <img src={Redo} />
         </RoundedIconWrapper>
-        <div className="m-4 hover:bg-[#bbbbbb] px-2 rounded-lg cursor-pointer">
+        <div
+          className="m-4 hover:bg-[#bbbbbb] px-2 rounded-lg cursor-pointer "
+          onClick={DownloadHTML}
+        >
           Save
           <img className="inline m-2" src={Save} />
         </div>

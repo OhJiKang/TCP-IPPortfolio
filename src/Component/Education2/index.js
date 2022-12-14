@@ -38,7 +38,7 @@ function Education2_Compo({
         decreaseStateFunc={decreaseStateFunc}
         id={id}
         increaseStatefunc={increaseStatefunc}
-        className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] text-white flex flex-row justify-center items-center"
+        className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] flex flex-row justify-center items-center"
       >
         <div className=" relative w-[200px] h-[140px] border-c4 border-[2px] rounded-[10px] shrink-0 overflow-hidden">
           <div>

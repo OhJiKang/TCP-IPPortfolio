@@ -45,7 +45,7 @@ function Aboutme1Compo({
         />
         <img src={image} alt="preview image" />
       </div>
-      <div className="w-[600px] m-auto text-white bg-c3 border-c4 border-[2px] rounded-[40px] text-center font-para pt-[10px] pl-[20px]">
+      <div className="w-[600px] m-auto bg-c3 border-c4 border-[2px] rounded-[40px] text-center font-para pt-[10px] pl-[20px]">
         <textarea
           rows="1"
           id={id}

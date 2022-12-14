@@ -4,6 +4,15 @@ import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
 import Dog from "../../Asset/Dog.png";
 function AboutMe1({ faindex, rerenderfunc }) {
+  let name = "";
+  if (window.localStorage.getItem("name")) {
+    name = window.localStorage.getItem("name");
+  }
+  let job = "";
+  if (window.localStorage.getItem("profession")) {
+    job = window.localStorage.getItem("profession");
+  }
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -22,8 +31,8 @@ function AboutMe1({ faindex, rerenderfunc }) {
       Fatherindex: faindex,
       key: "Aboutme1Compo",
       Component: Aboutme1Compo,
-      title: "Student at Ton Duc Thang University",
-      link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+      title: `Hi my name is ${name}`,
+      link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
       time: "Sep 2021 - 2077",
       URL: Dog,
     },
@@ -50,8 +59,8 @@ function AboutMe1({ faindex, rerenderfunc }) {
         Fatherindex: faindex,
         key: "Aboutme1Compo",
         Component: Aboutme1Compo,
-        title: "Student at Ton Duc Thang University",
-        link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+        title: `Hi my name is ${name}`,
+        link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
         time: "Sep 2021 - 2077",
         URL: Dog,
       },
@@ -135,6 +144,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
   const changeImage = (id, URL) => {
@@ -153,7 +163,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
   };
   return (
     <ComponentWrapper
-      className=" w-full pt-[90px] pb-[30px] bg-[url('../Asset/AboutmeBackground1.png')]"
+      className=" w-full pt-[90px] pb-[30px] bg-c1"
       deleteFunc={deleteComponent}
       increaseStatefunc={IncreaseElement}
       id={faindex}

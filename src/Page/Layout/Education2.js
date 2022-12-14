@@ -12,10 +12,15 @@ function Education2({ rerenderfunc, faindex }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrEducation = getArr.filter(
     (item) =>
       item.Fatherindex == faindex && item.FatherComponent == "Education1"
   );
+  let job = "";
+  if (window.localStorage.getItem("profession")) {
+    job = window.localStorage.getItem("profession");
+  }
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
@@ -25,7 +30,7 @@ function Education2({ rerenderfunc, faindex }) {
       key: "Education2Compo",
       Component: Education2Compo,
       title: "Student at Ton Duc Thang University",
-      link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+      link: `Bachelor of ${job} `,
       time: "Sep 2021 - 2077",
       URL: TDT,
     },
@@ -53,7 +58,7 @@ function Education2({ rerenderfunc, faindex }) {
         key: "Education2Compo",
         Component: Education2Compo,
         title: "Student at Ton Duc Thang University",
-        link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+        link: `Bachelor of ${job} `,
         time: "Sep 2021 - 2077",
         URL: TDT,
       },
@@ -137,6 +142,7 @@ function Education2({ rerenderfunc, faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
   const changeImage = (id, URL) => {
@@ -161,7 +167,7 @@ function Education2({ rerenderfunc, faindex }) {
       increaseStatefunc={IncreaseElement}
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[240px] h-[40px] border-c4 border-[5px] rounded-[10px] text-white font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[240px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Education & Certification
         </div>
         {numofEducation2.map(

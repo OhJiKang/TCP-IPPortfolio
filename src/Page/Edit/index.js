@@ -12,44 +12,10 @@ import {
 } from "../../Util/containerlayout";
 import useStore from "./Store/Store";
 function PageTest3() {
-  const addArr = useStore((state) => state.addPresent);
-  const getPos = (event) => {
-    switch (event.source.droppableId) {
-      case "aboutMeContainer": {
-        addArr(aboutMeContainer[event.source.index].key);
-        break;
-      }
-      case "WorkExperienceContainer": {
-        addArr(experienceContainer[event.source.index].key);
-        break;
-      }
-      case "EducationContainer": {
-        addArr(educationContainer[event.source.index].key);
-        break;
-      }
-      case "ProjectContainer": {
-        addArr(Project[event.source.index].key);
-        break;
-      }
-      case "ContactContainer": {
-        addArr(ContactContainer[event.source.index].key);
-        break;
-      }
-      case "CVContainer": {
-        addArr(CVContainer[event.source.index].key);
-        break;
-      }
-      default: {
-        break;
-      }
-    }
-  };
   return (
     <>
-      <DragDropContext onDragEnd={getPos}>
-        <NavBarEdit />
-        <Edit />
-      </DragDropContext>
+      <NavBarEdit />
+      <Edit />
     </>
   );
 }

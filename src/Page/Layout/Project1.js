@@ -12,10 +12,10 @@ function Project1({ rerenderfunc, faindex }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrProject = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "Project0"
   );
-  console.log(NewarrProject);
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
@@ -80,7 +80,6 @@ function Project1({ rerenderfunc, faindex }) {
     forceUpdate();
   };
   const ChangeLink = (id, value, index) => {
-    console.log(id);
     const arrneedtoChange = numofProject1.find(
       (item) =>
         id == item.id &&
@@ -100,7 +99,6 @@ function Project1({ rerenderfunc, faindex }) {
     forceUpdate();
   };
   const changeImage = (id, URL, index) => {
-    console.log(index);
     const arrneedtoChange = numofProject1.find(
       (item) =>
         id == item.id &&
@@ -110,7 +108,6 @@ function Project1({ rerenderfunc, faindex }) {
     let arrCopy = { ...arrneedtoChange };
     arrCopy["URL"] = URL;
     let newArr1 = [...partArr];
-    console.log(arrneedtoChange);
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
     let newArr2 = [...numofProject1];
@@ -153,6 +150,7 @@ function Project1({ rerenderfunc, faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
   return (
@@ -163,7 +161,7 @@ function Project1({ rerenderfunc, faindex }) {
       id={faindex}
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[100px] h-[40px] border-c4 border-[5px] rounded-[10px] text-white font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[100px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Project
         </div>
         {numofProject1.map(({ link, title, id, URL, Component }, index) => (

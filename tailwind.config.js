@@ -10,7 +10,14 @@ module.exports = {
         c2: 'var(--c2)',
         c3: 'var(--c3)',
         c4: 'var(--c4)',
+        ct: 'var(--ct)',
       },
+      keyframes: {
+        fade: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        }
+      }
     },
     fontFamily: {
       heading: ['Josefin Sans', 'sans-serif'],
