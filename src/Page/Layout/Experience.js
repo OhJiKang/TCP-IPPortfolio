@@ -10,6 +10,7 @@ function Experience1({ rerenderfunc, faindex }) {
   const getArr = [...partArr];
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrExperience = getArr.filter(
     (item) =>
@@ -23,8 +24,8 @@ function Experience1({ rerenderfunc, faindex }) {
       Fatherindex: faindex,
       key: "ExperienceComp1",
       Component: ExperienceComp1,
-      title: "Student at Ton Duc Thang University",
-      link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+      title: "My Experienced",
+      link: "I'm experienced at ReactJS for 2 years. Also I'm keen on learning new things everyday",
       time: "Sep 2021 - 2077",
     },
   ];
@@ -50,8 +51,8 @@ function Experience1({ rerenderfunc, faindex }) {
         Fatherindex: faindex,
         key: "ExperienceComp1",
         Component: ExperienceComp1,
-        title: "Student at Ton Duc Thang University",
-        link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
+        title: "My Experienced",
+        link: "I'm experienced at ReactJS for 2 years. Also I'm keen on learning new things everyday",
         time: "Sep 2021 - 2077",
       },
     ];

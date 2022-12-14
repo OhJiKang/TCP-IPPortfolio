@@ -12,6 +12,7 @@ function Project1({ rerenderfunc, faindex }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrProject = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "Project0"
   );
@@ -149,6 +150,7 @@ function Project1({ rerenderfunc, faindex }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
   return (

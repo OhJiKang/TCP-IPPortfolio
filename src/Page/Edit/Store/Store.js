@@ -94,6 +94,12 @@ let store = (set) => ({
         state.colorArr = filterArr;
       })
     ),
+  deleteColor: (index) =>
+    set(
+      produce((state) => {
+        state.colorArr.splice(index, 1);
+      })
+    ),
 });
 store = persist(store, { name: "EditArr" });
 const useStore = create(store);

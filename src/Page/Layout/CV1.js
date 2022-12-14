@@ -12,6 +12,7 @@ function CV1({ faindex, rerenderfunc }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrCV = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "CV0"
   );
@@ -59,6 +60,7 @@ function CV1({ faindex, rerenderfunc }) {
     ];
     setnumofCV1(newnumofCV1);
     addPart(newnumofCV1);
+
     forceUpdate();
   };
   const ChangeTitle = (id, value) => {
@@ -136,6 +138,7 @@ function CV1({ faindex, rerenderfunc }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
   const changeImage = (id, URL) => {

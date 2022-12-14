@@ -11,6 +11,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
   const deleteComp = useStore((state) => state.deletePresent);
+  const deletecolorFunc = useStore((state) => state.deleteColor);
   let NewarrContact = getArr.filter(
     (item) => item.Fatherindex == faindex && item.FatherComponent == "Contact0"
   );
@@ -119,6 +120,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
       ArrRemain = partArr;
     }
     deleteComp(id, ArrRemain);
+    deletecolorFunc(id);
     rerenderfunc();
   };
 
