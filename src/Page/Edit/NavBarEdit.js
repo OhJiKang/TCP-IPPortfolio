@@ -4,12 +4,14 @@ import Undo from "../../Asset/Undo.svg";
 import Save from "../../Asset/Save.svg";
 import RoundedIconWrapper from "./RoundedIconWrapper";
 import * as ReactDOMServer from "react-dom/server";
+import ReactDOM from "react-dom";
 import PageTest3 from ".";
 import { useEffect } from "react";
 import Edit from "./Edit";
 function NavBarEdit() {
+  console.log(Edit());
   const DownloadHTML = () => {
-    const k = document.documentElement.outerHTML;
+    const k = ReactDOMServer.renderToStaticMarkup(<Edit />);
     const element = document.createElement("a");
     const file = new Blob([k], { type: "text/plain" });
     element.href = URL.createObjectURL(file);
