@@ -69,7 +69,7 @@ function Education2_Compo({
             rows="1"
             id={id}
             value={`${datedes}`}
-            className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]"
+            className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]"
             onChange={ChangeDate}
           ></textarea>
           <textarea

@@ -38,7 +38,7 @@ function ExperienceComp1({
         id={id}
         value={`${datedes}`}
         onChange={ChangeDate}
-        className="mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]   outline-0	w-[100%] bg-transparent"
+        className="mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]   outline-0	w-[100%] bg-transparent"
       ></textarea>
       <textarea
         id={id}

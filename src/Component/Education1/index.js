@@ -33,14 +33,14 @@ function Education1Compo({
           id={id}
           value={`${titledes}`}
           onChange={ChangeTitle}
-          className="text-[18px]  outline-0	w-[100%] bg-transparent"
+          className="text-[14px]  outline-0	w-[100%] bg-transparent"
         ></textarea>
         <textarea
           rows="1"
           id={id}
           value={`${datedes}`}
           onChange={ChangeDate}
-          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] text-[#aaaaaa]"
+          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]"
         ></textarea>
         <textarea
           id={id}
