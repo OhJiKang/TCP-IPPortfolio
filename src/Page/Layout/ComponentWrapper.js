@@ -66,10 +66,17 @@ function ComponentWrapper({ children, className, id, deleteFunc }) {
       ct: "white",
     },
   ];
+  let Initid = 0;
+  if (window.localStorage.getItem("styleid")) {
+    Initid = window.localStorage.getItem("styleid");
+  } else {
+    Initid = 0;
+  }
+
   if (InitColoritem.length != 0) {
     initStatecolor = InitColoritem[0];
   } else {
-    initStatecolor = styles[0];
+    initStatecolor = styles[Initid];
   }
   const [style, setStyle] = useState(initStatecolor);
   const componentRef = useRef();
@@ -153,7 +160,6 @@ function ComponentWrapper({ children, className, id, deleteFunc }) {
   useEffect(() => {
     setColor();
   }, [style]);
-
   return (
     <div
       ref={componentRef}
