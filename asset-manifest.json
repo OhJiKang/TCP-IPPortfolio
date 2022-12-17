@@ -1,8 +1,11 @@
 {
   "files": {
-    "main.css": "/TCP-IPPortfolio/static/css/main.72c60406.css",
-    "main.js": "/TCP-IPPortfolio/static/js/main.7f31d565.js",
+    "main.css": "/TCP-IPPortfolio/static/css/main.66c98371.css",
+    "main.js": "/TCP-IPPortfolio/static/js/main.3665efa3.js",
+    "static/js/703.aa1100ee.chunk.js": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js",
+    "static/js/598.f768f8b8.chunk.js": "/TCP-IPPortfolio/static/js/598.f768f8b8.chunk.js",
     "static/js/787.9e83e489.chunk.js": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js",
+    "pdf.worker.js": "/TCP-IPPortfolio/8ae5c4b0cb0f971786745a4f93568392.js",
     "static/media/start-image.png": "/TCP-IPPortfolio/static/media/start-image.cdacf989f0772206c242.png",
     "static/media/Dog.png": "/TCP-IPPortfolio/static/media/Dog.0621bed05528eeee8659.png",
     "static/media/Store.png": "/TCP-IPPortfolio/static/media/Store.d151eae1a7218fa9299f.png",
@@ -44,12 +47,14 @@
     "static/media/Open.svg": "/TCP-IPPortfolio/static/media/Open.617a271f6192f8c28e3e33f05d9fb588.svg",
     "static/media/RightArrow.svg": "/TCP-IPPortfolio/static/media/RightArrow.3a820f3bbfb9f5b6a8735bc447185896.svg",
     "static/media/Arrow.svg": "/TCP-IPPortfolio/static/media/Arrow.a618308712c4fd54111b891ebedc627e.svg",
-    "main.72c60406.css.map": "/TCP-IPPortfolio/static/css/main.72c60406.css.map",
-    "main.7f31d565.js.map": "/TCP-IPPortfolio/static/js/main.7f31d565.js.map",
+    "main.66c98371.css.map": "/TCP-IPPortfolio/static/css/main.66c98371.css.map",
+    "main.3665efa3.js.map": "/TCP-IPPortfolio/static/js/main.3665efa3.js.map",
+    "703.aa1100ee.chunk.js.map": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js.map",
+    "598.f768f8b8.chunk.js.map": "/TCP-IPPortfolio/static/js/598.f768f8b8.chunk.js.map",
     "787.9e83e489.chunk.js.map": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72c60406.css",
-    "static/js/main.7f31d565.js"
+    "static/css/main.66c98371.css",
+    "static/js/main.3665efa3.js"
   ]
 }
