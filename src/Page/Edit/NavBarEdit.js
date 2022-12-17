@@ -66,8 +66,10 @@ function NavBarEdit() {
     const img = data.toDataURL("image/png", 2.0);
     const imgProperties = pdf.getImageProperties(img);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    // const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    const pdfHeight = pdf.internal.pageSize.getHeight();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    console.log(pdfWidth);
+    console.log(pdfHeight);
+    // const pdfHeight = pdf.internal.pageSize.getHeight();
     pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("shipping_label.pdf");
   };
