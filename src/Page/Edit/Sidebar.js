@@ -16,7 +16,7 @@ import { Draggable, Droppable } from "react-beautiful-dnd";
 function Sidebar() {
   return (
     <div className="w-[260px] h-full bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] pt-[64px] fixed right-0 top-0 overflow-y-scroll">
-      <div className="w-full h-[106px] flex flex-row justify-around items-center border-b-[1px] border-b-[#DBDBDB]">
+      {/* <div className="w-full h-[106px] flex flex-row justify-around items-center border-b-[1px] border-b-[#DBDBDB]">
         <div className="hover:bg-[#bbbbbb] rounded-lg cursor-pointer w-[80px] h-[68px] py-2 text-center flex justify-center flex-col">
           <img className="m-auto" src={TextIcon} />
           Text box
@@ -25,7 +25,7 @@ function Sidebar() {
           <img className="m-auto brightness-0" src={ImageIcon} />
           Image
         </div>
-      </div>
+      </div> */}
       <SidebarComponentWrapper name="About me" dropID={"aboutMeContainer"}>
         <div className="Aboutme_container">
           {aboutMeContainer.map((children, index) => {
