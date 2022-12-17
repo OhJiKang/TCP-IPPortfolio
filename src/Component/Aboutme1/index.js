@@ -30,7 +30,7 @@ function Aboutme1Compo({
   };
   return (
     <div className="relative mx-auto w-[740px] bg-c2 border-c4 border-[5px] rounded-[100px] pt-[70px]">
-      <div className="absolute top-0 left-1/2 border-[5px] rounded-full h-[140px] w-[140px] border-c4 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+      <div className="absolute  top-[-30%] left-[40%] border-[5px] rounded-full h-[140px] w-[140px] border-c4 overflow-hidden">
         <label
           htmlFor={keymame}
           className="absolute btn h-[100%] w-[100%]"
@@ -43,7 +43,7 @@ function Aboutme1Compo({
           onChange={onImageChange}
           className=" invisible absolute filetype z-0	 "
         />
-        <img src={image} alt="preview image" />
+        <img src={image} alt="preview" />
       </div>
       <div className="w-[600px] m-auto bg-c3 border-c4 border-[2px] rounded-[40px] text-center font-para pt-[10px] pl-[20px]">
         <textarea

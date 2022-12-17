@@ -67,6 +67,7 @@ function Project1Com({
           idname={id}
           value={`${linkdes}`}
           rows="6"
+          aria-multiline
           onChange={ChangeLink}
           className="mt-[10px] text-[14px] leading-[19px] outline-0	w-[100%] bg-transparent"
         ></textarea>

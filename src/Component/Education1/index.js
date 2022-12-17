@@ -33,7 +33,7 @@ function Education1Compo({
           id={id}
           value={`${titledes}`}
           onChange={ChangeTitle}
-          className="text-[14px]  outline-0	w-[100%] bg-transparent"
+          className="text-[18px]  outline-0	w-[100%] bg-transparent"
         ></textarea>
         <textarea
           rows="1"
@@ -47,7 +47,7 @@ function Education1Compo({
           value={`${linkdes}`}
           rows="6"
           onChange={ChangeLink}
-          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] leading-[19px]"
+          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] leading-[19px]"
         ></textarea>
       </Section>
     </div>

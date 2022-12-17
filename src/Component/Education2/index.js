@@ -54,7 +54,7 @@ function Education2_Compo({
               onChange={onImageChange}
               className="  invisible absolute filetype z-0	 "
             />
-            <img src={image} alt="preview image" />
+            <img src={image} alt="preview" />
           </div>
         </div>
         <div className="ml-[20px]">

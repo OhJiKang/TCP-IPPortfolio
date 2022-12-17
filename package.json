@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ohjikang.github.io/TCP-IPPortfolio",
   "dependencies": {
+    "@nidi/html2canvas": "1.0.0-rc.8",
     "@react-pdf-viewer/core": "^3.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

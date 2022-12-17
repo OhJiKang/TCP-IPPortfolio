@@ -4,13 +4,13 @@ import Undo from "../../Asset/Undo.svg";
 import Save from "../../Asset/Save.svg";
 import RoundedIconWrapper from "./RoundedIconWrapper";
 import { jsPDF } from "jspdf";
+import html2pdf from "html2pdf.js/dist/html2pdf.min";
 import html2canvas from "html2canvas";
 import * as ReactDOMServer from "react-dom/server";
 import ReactDOM from "react-dom";
 import PageTest3 from ".";
 import { useEffect } from "react";
 import Edit from "./Edit";
-import { Preview, print } from "react-html2pdf";
 function NavBarEdit() {
   // const takingCSS = () => {
   //   var css = [];
@@ -62,14 +62,29 @@ function NavBarEdit() {
 
   const createPDF = async () => {
     const pdf = new jsPDF("portrait", "pt", ["1440", "3000"]);
-    const data = await html2canvas(document.querySelector("#pdf"));
-    const img = data.toDataURL("image/png", 2.0);
+
+    const data = await html2canvas(document.querySelector("#pdf"), {
+      onClone: (clonedDocument) => {
+        console.log(clonedDocument);
+        Array.from(clonedDocument.querySelectorAll("textarea")).forEach(
+          (textArea) => {
+            console.log(textArea);
+            const div = clonedDocument.createElement("div");
+            div.innerText = textArea.value;
+            div.style.border = "1px solid #9b9b9b";
+            div.style.padding = "0 10px";
+            textArea.style.display = "none";
+            textArea.parentElement.append(div);
+          }
+        );
+      },
+    });
+    const img = data.toDataURL("image/png", 1.0);
+    console.log(img);
     const imgProperties = pdf.getImageProperties(img);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    console.log(pdfWidth);
-    console.log(pdfHeight);
-    // const pdfHeight = pdf.internal.pageSize.getHeight();
+    // const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    const pdfHeight = pdf.internal.pageSize.getHeight();
     pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("shipping_label.pdf");
   };
