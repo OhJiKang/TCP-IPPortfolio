@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TCP-IPPortfolio/static/css/main.66c98371.css",
-    "main.js": "/TCP-IPPortfolio/static/js/main.97090787.js",
+    "main.js": "/TCP-IPPortfolio/static/js/main.e036cdb3.js",
     "static/js/703.aa1100ee.chunk.js": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js",
     "static/js/598.f768f8b8.chunk.js": "/TCP-IPPortfolio/static/js/598.f768f8b8.chunk.js",
     "static/js/787.9e83e489.chunk.js": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js",
@@ -48,13 +48,13 @@
     "static/media/RightArrow.svg": "/TCP-IPPortfolio/static/media/RightArrow.3a820f3bbfb9f5b6a8735bc447185896.svg",
     "static/media/Arrow.svg": "/TCP-IPPortfolio/static/media/Arrow.a618308712c4fd54111b891ebedc627e.svg",
     "main.66c98371.css.map": "/TCP-IPPortfolio/static/css/main.66c98371.css.map",
-    "main.97090787.js.map": "/TCP-IPPortfolio/static/js/main.97090787.js.map",
+    "main.e036cdb3.js.map": "/TCP-IPPortfolio/static/js/main.e036cdb3.js.map",
     "703.aa1100ee.chunk.js.map": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js.map",
     "598.f768f8b8.chunk.js.map": "/TCP-IPPortfolio/static/js/598.f768f8b8.chunk.js.map",
     "787.9e83e489.chunk.js.map": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66c98371.css",
-    "static/js/main.97090787.js"
+    "static/js/main.e036cdb3.js"
   ]
 }
