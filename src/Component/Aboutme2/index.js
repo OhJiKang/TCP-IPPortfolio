@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Aboutme2Compo({
   increaseStatefunc,
   ChangeLinkfunc,
@@ -23,9 +25,21 @@ function Aboutme2Compo({
   const ChangeDate = (e) => {
     ChangeTimefunc(e.target.id, e.target.value);
   };
-  const onImageChange = (event) => {
-    const URLIMAGE = URL.createObjectURL(event.target.files[0]);
-    ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
+
+  const onImageChange = async (event) => {
+    const reader = new FileReader();
+    // Đọc thông tin tập tin đã được đăng tải
+    const getBase64 = (file) => {
+      return new Promise(function (resolve) {
+        reader.onloadend = function () {
+          resolve(reader.result);
+        };
+        reader.readAsDataURL(file);
+      });
+    };
+    let URLIMAGE = await getBase64(event.target.files[0]);
+
+    ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE);
   };
   return (
     <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px] m-auto">

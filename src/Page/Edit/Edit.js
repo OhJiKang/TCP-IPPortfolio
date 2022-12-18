@@ -68,7 +68,7 @@ function Edit() {
   return (
     <DragDropContext onDragEnd={getPos}>
       <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
-        <div>
+        <div id="needtotake">
           <Droppable droppableId="Drop_Place">
             {(provided) => (
               <div
@@ -77,11 +77,11 @@ function Edit() {
                 {...provided.droppableProps}
               >
                 <div
-                  className="w-full min-h-full h-fit flex flex-col items-center pr-[260px] "
+                  className="w-full min-h-full h-fit flex flex-col items-center pr-[260px] pt-[50px]"
                   id="ThingsNeedtoChange"
                 >
                   <div
-                    className="w-[1440px] bg-white min-h-full h-fit shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
+                    className="w-[100%] bg-white min-h-full h-fit shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
                     id="pdf"
                   >
                     <div className="h-[380px] w-full relative group">
@@ -93,12 +93,6 @@ function Edit() {
                       >
                         Your title
                       </div>
-                      <RoundedIconWrapper className="absolute left-0 bottom-0 m-3 opacity-0 group-hover:opacity-100 duration-300 ease-in-out">
-                        <img src={ImageIcon} />
-                      </RoundedIconWrapper>
-                      <RoundedIconWrapper className="absolute top-1/2 -left-14 -translate-y-1/2 opacity-0 group-hover:opacity-100 duration-300 ease-in-out">
-                        <img src={Bin} />
-                      </RoundedIconWrapper>
                     </div>
                     {returnArr !== undefined &&
                       returnArr.length !== 0 &&

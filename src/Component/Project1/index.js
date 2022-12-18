@@ -25,8 +25,18 @@ function Project1Com({
     );
   };
 
-  const onImageChange = (event) => {
-    const URLIMAGE = URL.createObjectURL(event.target.files[0]);
+  const onImageChange = async (event) => {
+    const reader = new FileReader();
+    // Đọc thông tin tập tin đã được đăng tải
+    const getBase64 = (file) => {
+      return new Promise(function (resolve) {
+        reader.onloadend = function () {
+          resolve(reader.result);
+        };
+        reader.readAsDataURL(file);
+      });
+    };
+    let URLIMAGE = await getBase64(event.target.files[0]);
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
   return (

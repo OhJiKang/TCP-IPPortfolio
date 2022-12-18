@@ -2,7 +2,6 @@ import Aboutme1Compo from "../../Component/Aboutme1";
 import { useEffect, useReducer, useState } from "react";
 import useStore from "../Edit/Store/Store";
 import ComponentWrapper from "./ComponentWrapper";
-import Dog from "../../Asset/Dog.png";
 function AboutMe1({ faindex, rerenderfunc }) {
   let name = "";
   if (window.localStorage.getItem("name")) {
@@ -34,7 +33,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
       title: `Hi my name is ${name}`,
       link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
       time: "Sep 2021 - 2077",
-      URL: Dog,
+      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
     },
   ];
   if (NewarrAboutme.length != 0) {
@@ -62,7 +61,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
         title: `Hi my name is ${name}`,
         link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
         time: "Sep 2021 - 2077",
-        URL: Dog,
+        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
       },
     ];
     setnumofAboutme1(newnumofAboutme1);

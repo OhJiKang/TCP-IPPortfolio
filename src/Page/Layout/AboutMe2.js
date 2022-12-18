@@ -1,4 +1,3 @@
-import Dog from "../../Asset/Dog.png";
 import ComponentWrapper from "./ComponentWrapper";
 import useStore from "../Edit/Store/Store";
 import { useEffect, useReducer, useState } from "react";
@@ -35,7 +34,7 @@ function AboutMe2({ faindex, rerenderfunc }) {
       title: `Hi my name is ${name}`,
       link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
       time: "Sep 2021 - 2077",
-      URL: Dog,
+      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
     },
   ];
   if (NewarrAboutme.length != 0) {
@@ -63,7 +62,7 @@ function AboutMe2({ faindex, rerenderfunc }) {
         title: `Hi my name is ${name}`,
         link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
         time: "Sep 2021 - 2077",
-        URL: Dog,
+        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
       },
     ];
     setnumofAboutme2(newnumofAboutme2);
@@ -149,6 +148,7 @@ function AboutMe2({ faindex, rerenderfunc }) {
     rerenderfunc();
   };
   const changeImage = (id, URL) => {
+    console.log(URL);
     const arrneedtoChange = numofAboutme2.find((item) => id == item.id);
     let arrCopy = { ...arrneedtoChange };
     arrCopy["URL"] = URL;

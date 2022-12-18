@@ -1,6 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
 import useStore from "../Edit/Store/Store";
-import Computer from "../../Asset/Computer.png";
 import Project1Com from "../../Component/Project1";
 import ComponentWrapper from "./ComponentWrapper";
 import Section from "./Section";
@@ -26,7 +25,7 @@ function Project1({ rerenderfunc, faindex }) {
       Component: Project1Com,
       title: "This is my computer",
       link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
-      URL: Computer,
+      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Computer.b992a4f697712600d42b.png",
     },
   ];
   if (NewarrProject.length != 0) {
@@ -53,7 +52,7 @@ function Project1({ rerenderfunc, faindex }) {
         Component: Project1Com,
         title: "This is my computer",
         link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
-        URL: Computer,
+        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Computer.b992a4f697712600d42b.png",
       },
     ];
     setnumofProject1(newnumofProject1);
