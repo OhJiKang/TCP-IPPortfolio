@@ -32,7 +32,7 @@ function Education2({ rerenderfunc, faindex }) {
       title: "Student at Ton Duc Thang University",
       link: `Bachelor of ${job} `,
       time: "Sep 2021 - 2077",
-      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/TDT.d37f18e61a7e16a0b611.png",
+      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/TDT.png",
     },
   ];
   if (NewarrEducation.length != 0) {
@@ -60,7 +60,7 @@ function Education2({ rerenderfunc, faindex }) {
         title: "Student at Ton Duc Thang University",
         link: `Bachelor of ${job} `,
         time: "Sep 2021 - 2077",
-        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/TDT.d37f18e61a7e16a0b611.png",
+        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/TDT.png",
       },
     ];
     setnumofEducation2(newnumofEducation2);

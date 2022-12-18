@@ -33,7 +33,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
       title: `Hi my name is ${name}`,
       link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
       time: "Sep 2021 - 2077",
-      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
+      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/Dog.png",
     },
   ];
   if (NewarrAboutme.length != 0) {
@@ -61,7 +61,7 @@ function AboutMe1({ faindex, rerenderfunc }) {
         title: `Hi my name is ${name}`,
         link: `I live in Vietnam. I work as a ${job}, and I don't have much time for hobbies these days. I would like to apply for the position of ${job} at your company.`,
         time: "Sep 2021 - 2077",
-        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/gh-pages/static/media/Dog.0621bed05528eeee8659.png",
+        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/Dog.png",
       },
     ];
     setnumofAboutme1(newnumofAboutme1);
