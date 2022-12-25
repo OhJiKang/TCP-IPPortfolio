@@ -1,6 +1,5 @@
 import Section from "../../Page/Layout/Section";
-import { useEffect, useRef } from "react";
-import autosize from "autosize";
+import TextareaAutosize from "react-textarea-autosize"
 
 function ExperienceComp1({
   increaseStatefunc,
@@ -23,12 +22,6 @@ function ExperienceComp1({
     ChangeTimefunc(e.target.id, e.target.value);
   };
 
-  const textareaRef = useRef();
-
-  useEffect(() => {
-    autosize(textareaRef.current);
-  }, [])
-
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -50,14 +43,13 @@ function ExperienceComp1({
         onChange={ChangeDate}
         className="mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]   outline-0	w-[100%] bg-transparent"
       ></textarea>
-      <textarea
+      <TextareaAutosize
         id={id}
         value={`${linkdes}`}
-        ref={textareaRef}
-        rows="6"
+        minRows="6"
         onChange={ChangeLink}
         className="mx-[10px] mt-[10px] text-[14px] leading-[19px]   outline-0	w-[100%] bg-transparent"
-      ></textarea>
+      ></TextareaAutosize>
     </Section>
   );
 }

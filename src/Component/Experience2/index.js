@@ -1,7 +1,6 @@
 import Section from "../../Page/Layout/Section";
-import autosize from "autosize";
-import { useRef } from "react";
-import { useEffect } from "react";
+import TextareaAutosize from "react-textarea-autosize"
+
 function ExperienceComp2({
   increaseStatefunc,
   ChangeLinkfunc,
@@ -23,11 +22,6 @@ function ExperienceComp2({
     ChangeTimefunc(e.target.id, e.target.value);
   };
 
-  const textareaRef = useRef();
-
-  useEffect(() => {
-    autosize(textareaRef.current);
-  }, [])
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -36,14 +30,13 @@ function ExperienceComp2({
       className="w-[740px] min-h-[240px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] flex flex-row items-center"
     >
       <div className="w-[170px] min-h-[200px] pr-2 shrink-0 border-r border-c4 h-full flex flex-col justify-center">
-        <textarea
+        <TextareaAutosize
           rows="1"
-          ref={textareaRef}
           id={id}
           value={`${titledes}`}
           onChange={ChangeTitle}
           className="text-[30px] outline-0	w-[100%] bg-transparent"
-        ></textarea>
+        ></TextareaAutosize>
         <textarea
           rows="1"
           id={id}
@@ -52,14 +45,13 @@ function ExperienceComp2({
           className="text-[18px] text-[#aaaaaa] outline-0 w-[100%] bg-transparent"
         ></textarea>
       </div>
-      <textarea
+      <TextareaAutosize
         id={id}
         value={`${linkdes}`}
-        ref={textareaRef}
-        rows="6"
+        minRows="6"
         onChange={ChangeLink}
         className="mx-[10px] mt-[10px] text-[14px] leading-[19px]   outline-0	w-[100%] bg-transparent"
-      ></textarea>
+      ></TextareaAutosize>
     </Section>
   );
 }

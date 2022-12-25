@@ -1,9 +1,7 @@
 import Section from "../../Page/Layout/Section";
 import { ColorContext } from "../../Page/Layout/ComponentWrapper";
 import { useContext } from "react";
-import autosize from "autosize";
-import { useRef } from "react";
-import { useEffect } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 
 function Project2Com({
   increaseStatefunc,
@@ -47,12 +45,6 @@ function Project2Com({
 
   const fillColor = useContext(ColorContext).c4;
 
-  const textareaRef = useRef();
-
-  useEffect(() => {
-    autosize(textareaRef.current);
-  }, [])
-
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -69,17 +61,16 @@ function Project2Com({
         onChange={ChangeTitle}
         className="text-[18px]  outline-0	w-[100%] bg-transparent"
       ></textarea>
-      <textarea
+      <TextareaAutosize
         ind={index}
         id={keymame}
         idname={id}
         value={`${linkdes}`}
-        rows="6"
-        ref={textareaRef}
+        minRows="6"
         aria-multiline
         onChange={ChangeLink}
         className="mt-[10px] text-[14px] leading-[19px] outline-0	w-[100%] bg-transparent"
-      ></textarea>
+      ></TextareaAutosize>
       <div className="w-full mt-3 cursor-pointer" onClick={() => console.log('click')}>
         <svg
           className="m-auto border-[2px] border-c2 rounded-[10px]"

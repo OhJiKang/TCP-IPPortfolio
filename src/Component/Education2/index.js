@@ -1,6 +1,6 @@
 import Section from "../../Page/Layout/Section";
 import { useEffect, useRef } from "react";
-import autosize from "autosize";
+import TextareaAutosize from "react-textarea-autosize"
 
 function Education2_Compo({
   increaseStatefunc,
@@ -43,12 +43,6 @@ function Education2_Compo({
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
 
-  const textareaRef = useRef();
-
-  useEffect(() => {
-    autosize(textareaRef.current);
-  }, [])
-
   return (
     <div>
       <Section
@@ -89,14 +83,13 @@ function Education2_Compo({
             className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]"
             onChange={ChangeDate}
           ></textarea>
-          <textarea
+          <TextareaAutosize
             id={id}
             value={`${linkdes}`}
-            ref={textareaRef}
-            rows="6"
+            minRows="6"
             onChange={ChangeLink}
             className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] leading-[19px]"
-          ></textarea>
+          ></TextareaAutosize>
         </div>
       </Section>
     </div>

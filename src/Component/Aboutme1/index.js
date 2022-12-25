@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import autosize from "autosize";
+import TextareaAutosize from "react-textarea-autosize"
 
 function Aboutme1Compo({
   increaseStatefunc,
@@ -41,12 +41,6 @@ function Aboutme1Compo({
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
 
-  const textareaRef = useRef();
-
-  useEffect(() => {
-    autosize(textareaRef.current);
-  }, [])
-
   return (
     <div className="relative mx-auto w-[740px] bg-c2 border-c4 border-[5px] rounded-[100px] pt-[70px]">
       <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 border-[5px] rounded-full h-[140px] w-[140px] border-c4 overflow-hidden">
@@ -72,14 +66,13 @@ function Aboutme1Compo({
           onChange={ChangeTitle}
           className=" outline-0	w-[100%] bg-transparent text-[18px]"
         ></textarea>
-        <textarea
-          rows="6"
+        <TextareaAutosize
+          minRows="6"
           id={id}
           value={`${linkdes}`}
-          ref={textareaRef}
           onChange={ChangeLink}
           className="outline-0	w-[100%] bg-transparent text-[14px] leading-[19px]"
-        ></textarea>
+        ></TextareaAutosize>
       </div>
     </div>
   );
