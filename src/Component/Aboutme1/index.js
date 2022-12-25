@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import autosize from "autosize";
+
 function Aboutme1Compo({
   increaseStatefunc,
   ChangeLinkfunc,
@@ -37,9 +40,16 @@ function Aboutme1Compo({
     let URLIMAGE = await getBase64(event.target.files[0]);
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
+
+  const textareaRef = useRef();
+
+  useEffect(() => {
+    autosize(textareaRef.current);
+  }, [])
+
   return (
     <div className="relative mx-auto w-[740px] bg-c2 border-c4 border-[5px] rounded-[100px] pt-[70px]">
-      <div className="absolute  top-[-30%] left-[40%] border-[5px] rounded-full h-[140px] w-[140px] border-c4 overflow-hidden">
+      <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 border-[5px] rounded-full h-[140px] w-[140px] border-c4 overflow-hidden">
         <label
           htmlFor={keymame}
           className="absolute btn h-[100%] w-[100%]"
@@ -66,6 +76,7 @@ function Aboutme1Compo({
           rows="6"
           id={id}
           value={`${linkdes}`}
+          ref={textareaRef}
           onChange={ChangeLink}
           className="outline-0	w-[100%] bg-transparent text-[14px] leading-[19px]"
         ></textarea>

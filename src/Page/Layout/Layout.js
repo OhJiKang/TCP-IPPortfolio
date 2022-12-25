@@ -5,8 +5,10 @@ import Contact1 from "./Contact1";
 import CV1 from "./CV1";
 import Education1 from "./Education1";
 import Education2 from "./Education2";
-import Experience1 from "./Experience";
+import Experience1 from "./Experience1";
+import Experience2 from "./Experience2";
 import Project1 from "./Project1";
+import Project2 from "./Project2";
 
 function Layout() {
   return (
@@ -16,7 +18,9 @@ function Layout() {
       <Education1 />
       <Education2 />
       <Experience1 />
+      <Experience2 />
       <Project1 />
+      <Project2 />
       <Contact1 />
       <CV1 />
     </div>

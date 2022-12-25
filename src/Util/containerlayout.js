@@ -2,7 +2,7 @@ import AboutMe1 from "../Page/Layout/AboutMe1";
 import AboutMe2 from "../Page/Layout/AboutMe2";
 import Education1 from "../Page/Layout/Education1";
 import Education2 from "../Page/Layout/Education2";
-import Experience from "../Page/Layout/Experience";
+import Experience1 from "../Page/Layout/Experience1";
 import Project1 from "../Page/Layout/Project1";
 import CV1 from "../Page/Layout/CV1";
 import Contact1 from "../Page/Layout/Contact1";
@@ -23,7 +23,7 @@ const educationContainer = [
   { key: "Education1", Component: Education2, id: 101, image: Education2IMG },
 ];
 const experienceContainer = [
-  { key: "experience0", Component: Experience, id: 200, image: Experience1IMG },
+  { key: "experience0", Component: Experience1, id: 200, image: Experience1IMG },
 ];
 const Project = [
   { key: "Project0", Component: Project1, id: 300, image: Project1IMG },

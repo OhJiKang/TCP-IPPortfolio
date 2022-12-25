@@ -1,4 +1,6 @@
 import Section from "../../Page/Layout/Section";
+import { useEffect, useRef } from "react";
+import autosize from "autosize";
 
 function Project1Com({
   increaseStatefunc,
@@ -39,6 +41,13 @@ function Project1Com({
     let URLIMAGE = await getBase64(event.target.files[0]);
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
+
+  const textareaRef = useRef();
+
+  useEffect(() => {
+    autosize(textareaRef.current);
+  }, [])
+
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -76,6 +85,7 @@ function Project1Com({
           id={keymame}
           idname={id}
           value={`${linkdes}`}
+          ref={textareaRef}
           rows="6"
           aria-multiline
           onChange={ChangeLink}

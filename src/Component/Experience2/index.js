@@ -1,8 +1,8 @@
 import Section from "../../Page/Layout/Section";
-import { useEffect, useRef } from "react";
 import autosize from "autosize";
-
-function ExperienceComp1({
+import { useRef } from "react";
+import { useEffect } from "react";
+function ExperienceComp2({
   increaseStatefunc,
   ChangeLinkfunc,
   ChangeTitlefunc,
@@ -28,28 +28,30 @@ function ExperienceComp1({
   useEffect(() => {
     autosize(textareaRef.current);
   }, [])
-
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
       id={id}
       increaseStatefunc={increaseStatefunc}
-      className="w-[740px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px]"
+      className="w-[740px] min-h-[240px] bg-c3 p-[20px] font-para border-c4 rounded-[40px] border-[2px] flex flex-row items-center"
     >
-      <textarea
-        rows="1"
-        id={id}
-        value={`${titledes}`}
-        onChange={ChangeTitle}
-        className="text-[18px] outline-0	w-[100%] bg-transparent"
-      ></textarea>
-      <textarea
-        rows="1"
-        id={id}
-        value={`${datedes}`}
-        onChange={ChangeDate}
-        className="mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]   outline-0	w-[100%] bg-transparent"
-      ></textarea>
+      <div className="w-[170px] min-h-[200px] pr-2 shrink-0 border-r border-c4 h-full flex flex-col justify-center">
+        <textarea
+          rows="1"
+          ref={textareaRef}
+          id={id}
+          value={`${titledes}`}
+          onChange={ChangeTitle}
+          className="text-[30px] outline-0	w-[100%] bg-transparent"
+        ></textarea>
+        <textarea
+          rows="1"
+          id={id}
+          value={`${datedes}`}
+          onChange={ChangeDate}
+          className="text-[18px] text-[#aaaaaa] outline-0 w-[100%] bg-transparent"
+        ></textarea>
+      </div>
       <textarea
         id={id}
         value={`${linkdes}`}
@@ -62,4 +64,4 @@ function ExperienceComp1({
   );
 }
 
-export default ExperienceComp1;
+export default ExperienceComp2;

@@ -1,6 +1,7 @@
 import Section from "../../Page/Layout/Section";
-import TDT from "../../Asset/TDT.png";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
+import autosize from "autosize";
+
 function Education2_Compo({
   increaseStatefunc,
   ChangeLinkfunc,
@@ -41,6 +42,12 @@ function Education2_Compo({
     let URLIMAGE = await getBase64(event.target.files[0]);
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
+
+  const textareaRef = useRef();
+
+  useEffect(() => {
+    autosize(textareaRef.current);
+  }, [])
 
   return (
     <div>
@@ -85,6 +92,7 @@ function Education2_Compo({
           <textarea
             id={id}
             value={`${linkdes}`}
+            ref={textareaRef}
             rows="6"
             onChange={ChangeLink}
             className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] leading-[19px]"
