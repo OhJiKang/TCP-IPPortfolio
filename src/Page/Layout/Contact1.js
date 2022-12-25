@@ -31,12 +31,18 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
   if (NewarrContact.length != 0) {
     InitValue = NewarrContact;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Contact1Compo;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Contact1Compo;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofContact1, setnumofContact1] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofContact1, setnumofContact1] = useState(newInitValue);
   useEffect(() => {
     addPart(numofContact1);
   }, []);

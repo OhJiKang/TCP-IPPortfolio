@@ -4,15 +4,49 @@ import produce from "immer";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { isValidElement } from "react";
 import ReactDOMServer from "react-dom/server";
-let store = (set) => ({
+let store = (set, get) => ({
   arrPresent: [],
-  addPresent: (Componeedtoadd) =>
+  addPresent: (Componeedtoadd, index) =>
     set(
       produce((state) => {
-        state.arrPresent = [...state.arrPresent, Componeedtoadd];
+        state.arrPresent.splice(index, 0, Componeedtoadd);
       })
     ),
   PartArr: [],
+  ChangeArrPresent: (index1, index2) =>
+    set(
+      produce((state) => {
+        [state.arrPresent[index1], state.arrPresent[index2]] = [
+          state.arrPresent[index2],
+          state.arrPresent[index1],
+        ];
+        console.log(get().PartArr);
+      })
+    ),
+  ChangePartArr: (index1, index2) =>
+    set(
+      produce((state) => {
+        const ArrChange = JSON.parse(JSON.stringify(state.PartArr));
+        const allIndexe1 = ArrChange.map((e, i) =>
+          e.Fatherindex === index1 ? i : -1
+        ).filter((index) => index !== -1);
+        const allIndexe2 = ArrChange.map((e, i) =>
+          e.Fatherindex === index2 ? i : -1
+        ).filter((index) => index !== -1);
+
+        allIndexe1.forEach((element) => {
+          let arrCopy = { ...ArrChange[element] };
+          arrCopy["Fatherindex"] = index2;
+          ArrChange[element] = arrCopy;
+        });
+        allIndexe2.forEach((element) => {
+          let arrCopy = { ...ArrChange[element] };
+          arrCopy["Fatherindex"] = index1;
+          ArrChange[element] = arrCopy;
+        });
+        state.PartArr = [...ArrChange];
+      })
+    ),
   deletePresent: (index, remainPart) =>
     set(
       produce((state) => {

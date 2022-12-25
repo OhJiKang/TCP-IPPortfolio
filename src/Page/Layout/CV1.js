@@ -33,12 +33,18 @@ function CV1({ faindex, rerenderfunc }) {
   if (NewarrCV.length != 0) {
     InitValue = NewarrCV;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = CV1Compo;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = CV1Compo;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofCV1, setnumofCV1] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofCV1, setnumofCV1] = useState(newInitValue);
   useEffect(() => {
     addPart(numofCV1);
   }, []);
@@ -60,7 +66,6 @@ function CV1({ faindex, rerenderfunc }) {
     ];
     setnumofCV1(newnumofCV1);
     addPart(newnumofCV1);
-
     forceUpdate();
   };
   const ChangeTitle = (id, value) => {

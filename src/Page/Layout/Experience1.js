@@ -31,12 +31,18 @@ function Experience1({ rerenderfunc, faindex }) {
   if (NewarrExperience.length != 0) {
     InitValue = NewarrExperience;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = ExperienceComp1;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = ExperienceComp1;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofExperience1, setnumofExperience1] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofExperience1, setnumofExperience1] = useState(newInitValue);
   useEffect(() => {
     addPart(numofExperience1);
   }, []);

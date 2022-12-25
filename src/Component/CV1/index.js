@@ -41,6 +41,7 @@ function CV1Compo({
               id={keymame}
               idname={id}
               type="file"
+              accept="application/pdf"
               onChange={onChange}
               className="invisible absolute filetype z-0	 "
             />
