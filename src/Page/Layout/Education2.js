@@ -38,12 +38,18 @@ function Education2({ rerenderfunc, faindex }) {
   if (NewarrEducation.length != 0) {
     InitValue = NewarrEducation;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Education2Compo;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Education2Compo;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofEducation2, setnumofEducation2] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofEducation2, setnumofEducation2] = useState(newInitValue);
   useEffect(() => {
     addPart(numofEducation2);
   }, []);

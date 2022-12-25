@@ -39,12 +39,18 @@ function AboutMe1({ faindex, rerenderfunc }) {
   if (NewarrAboutme.length != 0) {
     InitValue = NewarrAboutme;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Aboutme1Compo;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Aboutme1Compo;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofAboutme1, setnumofAboutme1] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofAboutme1, setnumofAboutme1] = useState(newInitValue);
   useEffect(() => {
     addPart(numofAboutme1);
   }, []);

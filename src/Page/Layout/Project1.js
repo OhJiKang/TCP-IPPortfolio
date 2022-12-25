@@ -31,12 +31,18 @@ function Project1({ rerenderfunc, faindex }) {
   if (NewarrProject.length != 0) {
     InitValue = NewarrProject;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Project1Com;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Project1Com;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofProject1, setnumofProject1] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofProject1, setnumofProject1] = useState(newInitValue);
   useEffect(() => {
     addPart(numofProject1);
   }, []);

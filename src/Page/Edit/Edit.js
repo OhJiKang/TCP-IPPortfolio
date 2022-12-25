@@ -12,7 +12,7 @@ import {
   experienceContainer,
   Project,
 } from "../../Util/containerlayout";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import useStore from "./Store/Store";
 import GlobalStyle from "../../Component/GlobalStyle";
 function Edit() {
@@ -25,6 +25,8 @@ function Edit() {
     ...Project,
   ];
   let arrPresent = useStore((state) => state.arrPresent);
+  let ChangeArrPresent = useStore((state) => state.ChangeArrPresent);
+  let ChangePartArr = useStore((state) => state.ChangePartArr);
   let returnArr = [];
   const [count, forceUpdate] = useState(0);
   for (let i of arrPresent) {
@@ -33,36 +35,84 @@ function Edit() {
       sumofArr.filter((component) => i === component.key)[0],
     ];
   }
+
   const addArr = useStore((state) => state.addPresent);
   const getPos = (event) => {
-    switch (event.source.droppableId) {
-      case "aboutMeContainer": {
-        addArr(aboutMeContainer[event.source.index].key);
-        break;
+    if (arrPresent.length == 0) {
+      let index = 0;
+      if (arrPresent[index]) {
+        let index1 = index + 1;
+        ChangePartArr(index, index1);
       }
-      case "WorkExperienceContainer": {
-        addArr(experienceContainer[event.source.index].key);
-        break;
+      switch (event.source.droppableId) {
+        case "aboutMeContainer": {
+          addArr(aboutMeContainer[event.source.index].key, index);
+          break;
+        }
+        case "WorkExperienceContainer": {
+          addArr(experienceContainer[event.source.index].key, index);
+          break;
+        }
+        case "EducationContainer": {
+          addArr(educationContainer[event.source.index].key, index);
+          break;
+        }
+        case "ProjectContainer": {
+          addArr(Project[event.source.index].key, index);
+          break;
+        }
+        case "ContactContainer": {
+          addArr(ContactContainer[event.source.index].key, index);
+          break;
+        }
+        case "CVContainer": {
+          addArr(CVContainer[event.source.index].key, index);
+          break;
+        }
+        default: {
+          break;
+        }
       }
-      case "EducationContainer": {
-        addArr(educationContainer[event.source.index].key);
-        break;
+    } else if (event.destination.droppableId != event.source.droppableId) {
+      let index = event.destination.index;
+      if (arrPresent[index]) {
+        let index1 = index + 1;
+        ChangePartArr(index, index1);
       }
-      case "ProjectContainer": {
-        addArr(Project[event.source.index].key);
-        break;
+      switch (event.source.droppableId) {
+        case "aboutMeContainer": {
+          addArr(aboutMeContainer[event.source.index].key, index);
+          break;
+        }
+        case "WorkExperienceContainer": {
+          addArr(experienceContainer[event.source.index].key, index);
+          break;
+        }
+        case "EducationContainer": {
+          addArr(educationContainer[event.source.index].key, index);
+          break;
+        }
+        case "ProjectContainer": {
+          addArr(Project[event.source.index].key, index);
+          break;
+        }
+        case "ContactContainer": {
+          addArr(ContactContainer[event.source.index].key, index);
+          break;
+        }
+        case "CVContainer": {
+          addArr(CVContainer[event.source.index].key, index);
+          break;
+        }
+        default: {
+          break;
+        }
       }
-      case "ContactContainer": {
-        addArr(ContactContainer[event.source.index].key);
-        break;
-      }
-      case "CVContainer": {
-        addArr(CVContainer[event.source.index].key);
-        break;
-      }
-      default: {
-        break;
-      }
+    } else {
+      let index1 = event.destination.index;
+      let index2 = event.source.index;
+      ChangePartArr(index1, index2);
+      ChangeArrPresent(index1, index2);
     }
   };
   return (
@@ -98,16 +148,26 @@ function Edit() {
                       returnArr.length !== 0 &&
                       returnArr.map(({ key, Component, id, image }, index) => {
                         return (
-                          <div key={index}>
-                            {
-                              <Component
-                                rerenderprob={count}
-                                rerenderfunc={forceUpdate}
-                                faindex={index}
-                                key={`Com_${index}`}
-                              />
-                            }
-                          </div>
+                          <Draggable
+                            key={`Com_${index}`}
+                            draggableId={`Com_${index}`}
+                            index={index}
+                          >
+                            {(provided) => (
+                              <div
+                                {...provided.draggableProps}
+                                ref={provided.innerRef}
+                                {...provided.dragHandleProps}
+                              >
+                                <Component
+                                  rerenderprob={count}
+                                  rerenderfunc={forceUpdate}
+                                  faindex={index}
+                                  key={`Com_${index}`}
+                                />
+                              </div>
+                            )}
+                          </Draggable>
                         );
                       })}
                     {provided.placeholder}

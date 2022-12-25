@@ -37,15 +37,18 @@ function AboutMe2({ faindex, rerenderfunc }) {
       URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/Dog.png",
     },
   ];
-  if (NewarrAboutme.length != 0) {
-    InitValue = NewarrAboutme;
-  }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Aboutme2Compo;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Aboutme2Compo;
+      newInitValue.push(arrCopy);
     }
   });
-  const [numofAboutme2, setnumofAboutme2] = useState(InitValue);
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
+  const [numofAboutme2, setnumofAboutme2] = useState(newInitValue);
   useEffect(() => {
     addPart(numofAboutme2);
   }, []);
