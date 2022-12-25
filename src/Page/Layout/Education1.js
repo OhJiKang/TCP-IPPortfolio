@@ -150,7 +150,7 @@ function Education1({ rerenderfunc, faindex }) {
       className="w-full py-[60px] bg-c1"
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[240px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[240px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c3 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Education & Certification
         </div>
         {numofEducation1.map(({ link, title, id, time, Component }, index) => (
