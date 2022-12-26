@@ -38,6 +38,7 @@ function Education2({ rerenderfunc, faindex }) {
   if (NewarrEducation.length != 0) {
     InitValue = NewarrEducation;
   }
+
   let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
@@ -53,6 +54,9 @@ function Education2({ rerenderfunc, faindex }) {
   useEffect(() => {
     addPart(numofEducation2);
   }, []);
+  useEffect(() => {
+    forceUpdate(numofEducation2);
+  }, [numofEducation2]);
   const IncreaseElement = () => {
     let idtoadd = numofEducation2.length + 1;
     let newnumofEducation2 = [

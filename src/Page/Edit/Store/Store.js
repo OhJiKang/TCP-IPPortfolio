@@ -33,17 +33,20 @@ let store = (set, get) => ({
         const allIndexe2 = ArrChange.map((e, i) =>
           e.Fatherindex === index2 ? i : -1
         ).filter((index) => index !== -1);
-
-        allIndexe1.forEach((element) => {
-          let arrCopy = { ...ArrChange[element] };
-          arrCopy["Fatherindex"] = index2;
-          ArrChange[element] = arrCopy;
-        });
-        allIndexe2.forEach((element) => {
-          let arrCopy = { ...ArrChange[element] };
-          arrCopy["Fatherindex"] = index1;
-          ArrChange[element] = arrCopy;
-        });
+        if (allIndexe1.length != 0) {
+          allIndexe1.forEach((element) => {
+            let arrCopy = { ...ArrChange[element] };
+            arrCopy["Fatherindex"] = index2;
+            ArrChange[element] = arrCopy;
+          });
+        }
+        if (allIndexe2.length != 0) {
+          allIndexe2.forEach((element) => {
+            let arrCopy = { ...ArrChange[element] };
+            arrCopy["Fatherindex"] = index1;
+            ArrChange[element] = arrCopy;
+          });
+        }
         state.PartArr = [...ArrChange];
       })
     ),

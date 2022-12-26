@@ -29,6 +29,8 @@ function Edit() {
   let ChangePartArr = useStore((state) => state.ChangePartArr);
   let returnArr = [];
   const [count, forceUpdate] = useState(0);
+  const [, forceUpdate2] = useReducer((x) => x + 1, 0);
+
   for (let i of arrPresent) {
     returnArr = [
       ...returnArr,
@@ -40,10 +42,6 @@ function Edit() {
   const getPos = (event) => {
     if (arrPresent.length == 0) {
       let index = 0;
-      if (arrPresent[index]) {
-        let index1 = index + 1;
-        ChangePartArr(index, index1);
-      }
       switch (event.source.droppableId) {
         case "aboutMeContainer": {
           addArr(aboutMeContainer[event.source.index].key, index);

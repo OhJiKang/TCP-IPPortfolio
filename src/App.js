@@ -23,13 +23,18 @@ function App() {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
               alignItems: "center",
               fontWeight: "bold",
             }}
           >
-            <img src={Logo} alt="ICON Academic Club" width="120" height="70" />
-            <span>TCP-IP</span>
+            <img
+              src={Logo}
+              style={{ marginRight: "4%" }}
+              alt="ICON Academic Club"
+              width="120"
+              height="70"
+            />
+            <span style={{ textAlign: "centers" }}>TCP-IP</span>
           </div>
         </footer>
       </div>

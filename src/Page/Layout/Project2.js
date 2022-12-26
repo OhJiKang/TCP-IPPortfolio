@@ -31,11 +31,17 @@ function Project2({ rerenderfunc, faindex }) {
   if (NewarrProject.length != 0) {
     InitValue = NewarrProject;
   }
+  let newInitValue = [];
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
-      i["Component"] = Project2Com;
+      let arrCopy = { ...i };
+      arrCopy["Component"] = Project2Com;
+      newInitValue.push(arrCopy);
     }
   });
+  if (newInitValue.length == 0) {
+    newInitValue = InitValue;
+  }
   const [numofProject2, setnumofProject2] = useState(InitValue);
   useEffect(() => {
     addPart(numofProject2);
