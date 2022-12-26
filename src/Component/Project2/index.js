@@ -71,7 +71,22 @@ function Project2Com({
         onChange={ChangeLink}
         className="mt-[10px] text-[14px] leading-[19px] outline-0	w-[100%] bg-transparent"
       ></TextareaAutosize>
-      <div className="w-full mt-3 cursor-pointer" onClick={() => console.log('click')}>
+      <div
+        className="relative w-full mt-3 cursor-pointer"
+        onClick={() => console.log("click")}
+      >
+        <label
+          htmlFor={keymame}
+          className="absolute btn h-[100%] w-[100%] z-20	"
+        ></label>
+        <input
+          ind={index}
+          id={keymame}
+          idname={id}
+          type="file"
+          onChange={onImageChange}
+          className="  invisible absolute filetype z-0	 "
+        />
         <svg
           className="m-auto border-[2px] border-c2 rounded-[10px]"
           width="40"

@@ -183,6 +183,7 @@ function CV1({ faindex, rerenderfunc }) {
           increaseStatefunc={IncreaseElement}
           key={`Little_Part_${index}_${id}`}
           keymame={`Little_Part_${faindex}_${id}`}
+          fatherindx={faindex}
         />
       ))}
     </ComponentWrapper>

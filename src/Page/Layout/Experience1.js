@@ -167,6 +167,7 @@ function Experience1({ rerenderfunc, faindex }) {
             increaseStatefunc={IncreaseElement}
             key={`Little_Part_${index}_${id}`}
             keymame={`Little_Part_${faindex}_${id}`}
+            fatherindx={faindex}
           />
         ))}
       </div>
