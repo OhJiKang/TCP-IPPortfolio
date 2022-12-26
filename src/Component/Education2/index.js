@@ -1,6 +1,6 @@
 import Section from "../../Page/Layout/Section";
 import { useEffect, useRef } from "react";
-import TextareaAutosize from "react-textarea-autosize"
+import TextareaAutosize from "react-textarea-autosize";
 
 function Education2_Compo({
   increaseStatefunc,

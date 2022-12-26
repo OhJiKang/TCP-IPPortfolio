@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import TextareaAutosize from "react-textarea-autosize"
+import TextareaAutosize from "react-textarea-autosize";
 
 function Aboutme2Compo({
   increaseStatefunc,
@@ -42,7 +42,6 @@ function Aboutme2Compo({
 
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE);
   };
-
 
   return (
     <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px] m-auto">

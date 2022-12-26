@@ -1,5 +1,5 @@
 import Section from "../../Page/Layout/Section";
-import TextareaAutosize from "react-textarea-autosize"
+import TextareaAutosize from "react-textarea-autosize";
 
 function ExperienceComp1({
   increaseStatefunc,
@@ -21,7 +21,6 @@ function ExperienceComp1({
   const ChangeDate = (e) => {
     ChangeTimefunc(e.target.id, e.target.value);
   };
-
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -46,7 +45,7 @@ function ExperienceComp1({
       <TextareaAutosize
         id={id}
         value={`${linkdes}`}
-        minRows="6"
+        rows="6"
         onChange={ChangeLink}
         className="mx-[10px] mt-[10px] text-[14px] leading-[19px]   outline-0	w-[100%] bg-transparent"
       ></TextareaAutosize>
