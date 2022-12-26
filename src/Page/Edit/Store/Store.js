@@ -20,7 +20,6 @@ let store = (set, get) => ({
           state.arrPresent[index2],
           state.arrPresent[index1],
         ];
-        console.log(get().PartArr);
       })
     ),
   ChangePartArr: (index1, index2) =>
@@ -135,6 +134,32 @@ let store = (set, get) => ({
     set(
       produce((state) => {
         state.colorArr.splice(index, 1);
+      })
+    ),
+  ChangeColor: (index1, index2) =>
+    set(
+      produce((state) => {
+        const ArrChange = JSON.parse(JSON.stringify(state.colorArr));
+        const allIndexe1 = ArrChange.map((e, i) =>
+          e.idfa === index1 ? i : -1
+        ).filter((index) => index !== -1);
+        const allIndexe2 = ArrChange.map((e, i) =>
+          e.idfa === index2 ? i : -1
+        ).filter((index) => index !== -1);
+
+        allIndexe1.forEach((element) => {
+          let arrCopy = { ...ArrChange[element] };
+          arrCopy["idfa"] = index2;
+          ArrChange[element] = arrCopy;
+        });
+
+        allIndexe2.forEach((element) => {
+          let arrCopy = { ...ArrChange[element] };
+          arrCopy["idfa"] = index1;
+          ArrChange[element] = arrCopy;
+        });
+
+        state.colorArr = [...ArrChange];
       })
     ),
 });

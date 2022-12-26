@@ -27,6 +27,8 @@ function Edit() {
   let arrPresent = useStore((state) => state.arrPresent);
   let ChangeArrPresent = useStore((state) => state.ChangeArrPresent);
   let ChangePartArr = useStore((state) => state.ChangePartArr);
+  let ChangeColor = useStore((state) => state.ChangeColor);
+
   let returnArr = [];
   const [count, forceUpdate] = useState(0);
   const [, forceUpdate2] = useReducer((x) => x + 1, 0);
@@ -76,6 +78,7 @@ function Edit() {
       if (arrPresent[index]) {
         let index1 = index + 1;
         ChangePartArr(index, index1);
+        ChangeColor(index, index1);
       }
       switch (event.source.droppableId) {
         case "aboutMeContainer": {
@@ -111,6 +114,7 @@ function Edit() {
       let index2 = event.source.index;
       ChangePartArr(index1, index2);
       ChangeArrPresent(index1, index2);
+      ChangeColor(index1, index2);
     }
   };
   return (

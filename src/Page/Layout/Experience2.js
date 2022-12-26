@@ -42,7 +42,7 @@ function Experience2({ rerenderfunc, faindex }) {
   if (newInitValue.length == 0) {
     newInitValue = InitValue;
   }
-  const [numofExperience2, setnumofExperience2] = useState(InitValue);
+  const [numofExperience2, setnumofExperience2] = useState(newInitValue);
   useEffect(() => {
     addPart(numofExperience2);
   }, []);
@@ -52,7 +52,7 @@ function Experience2({ rerenderfunc, faindex }) {
       ...numofExperience2,
       {
         id: idtoadd,
-        FatherComponent: "experience0",
+        FatherComponent: "experience1",
         Fatherindex: faindex,
         key: "ExperienceComp2",
         Component: ExperienceComp2,
