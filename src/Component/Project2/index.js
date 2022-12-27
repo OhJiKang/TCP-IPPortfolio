@@ -1,9 +1,10 @@
 import Section from "../../Page/Layout/Section";
 import { ColorContext } from "../../Page/Layout/ComponentWrapper";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import UploadIcon from "../../Asset/Upload.svg";
 import UploadWhiteIcon from "../../Asset/UploadWhite.svg";
+import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 
 function Project2Com({
   increaseStatefunc,
@@ -30,6 +31,12 @@ function Project2Com({
     );
   };
 
+  const [url, setUrl] = useState([]);
+  useEffect(() => {
+    if (image) {
+      setUrl([{ uri: image }]);
+    }
+  }, [image]);
   const onImageChange = async (event) => {
     const reader = new FileReader();
     // Đọc thông tin tập tin đã được đăng tải
@@ -73,26 +80,38 @@ function Project2Com({
         onChange={ChangeLink}
         className="mt-[10px] text-[14px] leading-[19px] outline-0	w-[100%] bg-transparent"
       ></TextareaAutosize>
-      <div
-        className="relative w-full mt-3 cursor-pointer"
-      >
-        <label
-          htmlFor={keymame}
-          className="absolute btn h-[100%] w-[100%] z-20	"
-        ></label>
-        <input
-          ind={index}
-          id={keymame}
-          idname={id}
-          type="file"
-          onChange={onImageChange}
-          className="  invisible absolute filetype z-0	 "
-        />
-        {fillColor === "black" ? (
-            <img className="border-[black] border-[2px] rounded-[10px] m-auto" src={UploadIcon} />
-          ) : (
-            <img className="border-[white] border-[2px] rounded-[10px] m-auto" src={UploadWhiteIcon} />
-          )}
+      <div>
+        {image ? (
+          <DocViewer documents={url} pluginRenderers={DocViewerRenderers} />
+        ) : (
+          <div>
+            <div className="relative w-full mt-3 cursor-pointer">
+              <label
+                htmlFor={keymame + `_`}
+                className="absolute btn h-[100%] w-[100%] z-20	"
+              ></label>
+              <input
+                ind={index}
+                id={keymame + `_`}
+                idname={id}
+                type="file"
+                onChange={onImageChange}
+                className="  invisible absolute filetype z-0	 "
+              />
+              {fillColor === "black" ? (
+                <img
+                  className="border-[black] border-[2px] rounded-[10px] m-auto"
+                  src={UploadIcon}
+                />
+              ) : (
+                <img
+                  className="border-[white] border-[2px] rounded-[10px] m-auto"
+                  src={UploadWhiteIcon}
+                />
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </Section>
   );

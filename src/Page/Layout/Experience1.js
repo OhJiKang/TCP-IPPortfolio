@@ -47,7 +47,7 @@ function Experience1({ rerenderfunc, faindex }) {
     addPart(numofExperience1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofExperience1.length + 1;
+    let idtoadd = numofExperience1.at(-1).id + 1;
     let newnumofExperience1 = [
       ...numofExperience1,
       {

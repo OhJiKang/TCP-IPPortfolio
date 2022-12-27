@@ -49,7 +49,7 @@ function CV1({ faindex, rerenderfunc }) {
     addPart(numofCV1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofCV1.length + 1;
+    let idtoadd = numofCV1.at(-1).id + 1;
     let newnumofCV1 = [
       ...numofCV1,
       {

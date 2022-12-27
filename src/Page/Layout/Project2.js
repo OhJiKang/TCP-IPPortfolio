@@ -25,7 +25,7 @@ function Project2({ rerenderfunc, faindex }) {
       Component: Project2Com,
       title: "This is my computer",
       link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
-      URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/Computer.png",
+      URL: "",
     },
   ];
   if (NewarrProject.length != 0) {
@@ -48,7 +48,7 @@ function Project2({ rerenderfunc, faindex }) {
     addPart(numofProject2);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofProject2.length + 1;
+    let idtoadd = numofProject2.at(-1).id + 1;
     let newnumofProject2 = [
       ...numofProject2,
       {
@@ -59,7 +59,7 @@ function Project2({ rerenderfunc, faindex }) {
         Component: Project2Com,
         title: "This is my computer",
         link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
-        URL: "https://raw.githubusercontent.com/OhJiKang/TCP-IPPortfolio/main/src/Asset/Computer.png",
+        URL: "",
       },
     ];
     setnumofProject2(newnumofProject2);

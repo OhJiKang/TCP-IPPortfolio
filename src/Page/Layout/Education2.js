@@ -58,7 +58,7 @@ function Education2({ rerenderfunc, faindex }) {
     forceUpdate(numofEducation2);
   }, [numofEducation2]);
   const IncreaseElement = () => {
-    let idtoadd = numofEducation2.length + 1;
+    let idtoadd = numofEducation2.at(-1).id + 1;
     let newnumofEducation2 = [
       ...numofEducation2,
       {

@@ -47,7 +47,7 @@ function Contact1({ faindex, index, rerenderfunc, rerenderprob }) {
     addPart(numofContact1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofContact1.length + 1;
+    let idtoadd = numofContact1.at(-1).id + 1;
     let newnumofContact1 = [
       ...numofContact1,
       {

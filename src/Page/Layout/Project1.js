@@ -47,7 +47,7 @@ function Project1({ rerenderfunc, faindex }) {
     addPart(numofProject1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofProject1.length + 1;
+    let idtoadd = numofProject1.at(-1).id + 1;
     let newnumofProject1 = [
       ...numofProject1,
       {

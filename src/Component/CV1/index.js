@@ -64,21 +64,6 @@ function CV1Compo({
             />
             <div>
               {url ? (
-                // <div
-                //   style={{
-                //     top: 0,
-                //     left: 0,
-                //     right: 0,
-                //     bottom: 0,
-                //     border: "1px solid rgba(0, 0, 0, 0.3)",
-                //     width: "100%",
-                //     height: "100%",
-                //   }}
-                // >
-                //   <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
-                //     <Viewer fileUrl={url} />
-                //   </Worker>
-                // </div>
                 <DocViewer
                   documents={url}
                   pluginRenderers={DocViewerRenderers}

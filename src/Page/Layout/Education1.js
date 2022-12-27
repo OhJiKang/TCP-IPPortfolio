@@ -52,7 +52,7 @@ function Education1({ rerenderfunc, faindex }) {
     addPart(numofEducation1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofEducation1.length + 1;
+    let idtoadd = numofEducation1.at(-1).id + 1;
     let newnumofEducation1 = [
       ...numofEducation1,
       {
