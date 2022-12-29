@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TCP-IPPortfolio/static/css/main.648792a1.css",
-    "main.js": "/TCP-IPPortfolio/static/js/main.a8472c67.js",
+    "main.css": "/TCP-IPPortfolio/static/css/main.9c90fc89.css",
+    "main.js": "/TCP-IPPortfolio/static/js/main.101a2bd8.js",
     "static/js/703.aa1100ee.chunk.js": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js",
     "static/js/598.5625313e.chunk.js": "/TCP-IPPortfolio/static/js/598.5625313e.chunk.js",
     "static/js/787.9e83e489.chunk.js": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js",
@@ -21,9 +21,11 @@
     "static/media/Main-background.png": "/TCP-IPPortfolio/static/media/Main-background.4d054ea6c39cd097aedc.png",
     "static/media/Model.png": "/TCP-IPPortfolio/static/media/Model.6d155fb35e7a977185a5.png",
     "static/media/Logo.svg": "/TCP-IPPortfolio/static/media/Logo.2eedf21ef42071d8f4c53cc6539d819f.svg",
+    "static/media/Experiece_2.png": "/TCP-IPPortfolio/static/media/Experiece_2.a5c03645133d3ab35502.png",
     "static/media/About_me_2.png": "/TCP-IPPortfolio/static/media/About_me_2.a3d6390056641f989c5c.png",
     "static/media/About_me_1.png": "/TCP-IPPortfolio/static/media/About_me_1.177daeb5274fefc17e4b.png",
     "static/media/Education_2.png": "/TCP-IPPortfolio/static/media/Education_2.4541bf788fbe8ec44bc0.png",
+    "static/media/Project_2.png": "/TCP-IPPortfolio/static/media/Project_2.905797e789b51a37a8e2.png",
     "static/media/Education_1.png": "/TCP-IPPortfolio/static/media/Education_1.fc6a0561d1041198b3f7.png",
     "static/media/Project_1.png": "/TCP-IPPortfolio/static/media/Project_1.fbb41a71c1a760c93d14.png",
     "static/media/Experiece_1.png": "/TCP-IPPortfolio/static/media/Experiece_1.8fabdd74efeee51e2daf.png",
@@ -34,6 +36,8 @@
     "static/media/TextLeft.svg": "/TCP-IPPortfolio/static/media/TextLeft.3e58f78de300e729785d9319ef8505d8.svg",
     "static/media/ImageIcon.svg": "/TCP-IPPortfolio/static/media/ImageIcon.8640d19215cf0e5c78bbb446216569ad.svg",
     "static/media/TextCenter.svg": "/TCP-IPPortfolio/static/media/TextCenter.0a3b25e328cf41bd10ee634bc58208c9.svg",
+    "static/media/Upload.svg": "/TCP-IPPortfolio/static/media/Upload.3372a3de9c7df6deb8d70f096690177a.svg",
+    "static/media/UploadWhite.svg": "/TCP-IPPortfolio/static/media/UploadWhite.9710a7dabd7024b05ad003e3c93645a2.svg",
     "static/media/Redo.svg": "/TCP-IPPortfolio/static/media/Redo.307300b62a48a8ae7e37e42e599ac6ff.svg",
     "static/media/Undo.svg": "/TCP-IPPortfolio/static/media/Undo.ea49a1f8d86ce77ac31296b7b9299597.svg",
     "static/media/Bin.svg": "/TCP-IPPortfolio/static/media/Bin.cd9b33b63132baf3136875c6fffe4f91.svg",
@@ -45,14 +49,14 @@
     "static/media/Open.svg": "/TCP-IPPortfolio/static/media/Open.617a271f6192f8c28e3e33f05d9fb588.svg",
     "static/media/RightArrow.svg": "/TCP-IPPortfolio/static/media/RightArrow.3a820f3bbfb9f5b6a8735bc447185896.svg",
     "static/media/Arrow.svg": "/TCP-IPPortfolio/static/media/Arrow.a618308712c4fd54111b891ebedc627e.svg",
-    "main.648792a1.css.map": "/TCP-IPPortfolio/static/css/main.648792a1.css.map",
-    "main.a8472c67.js.map": "/TCP-IPPortfolio/static/js/main.a8472c67.js.map",
+    "main.9c90fc89.css.map": "/TCP-IPPortfolio/static/css/main.9c90fc89.css.map",
+    "main.101a2bd8.js.map": "/TCP-IPPortfolio/static/js/main.101a2bd8.js.map",
     "703.aa1100ee.chunk.js.map": "/TCP-IPPortfolio/static/js/703.aa1100ee.chunk.js.map",
     "598.5625313e.chunk.js.map": "/TCP-IPPortfolio/static/js/598.5625313e.chunk.js.map",
     "787.9e83e489.chunk.js.map": "/TCP-IPPortfolio/static/js/787.9e83e489.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.648792a1.css",
-    "static/js/main.a8472c67.js"
+    "static/css/main.9c90fc89.css",
+    "static/js/main.101a2bd8.js"
   ]
 }
