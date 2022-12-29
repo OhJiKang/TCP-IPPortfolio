@@ -42,79 +42,91 @@ function Edit() {
 
   const addArr = useStore((state) => state.addPresent);
   const getPos = (event) => {
-    if (arrPresent.length == 0) {
-      let index = 0;
-      switch (event.source.droppableId) {
-        case "aboutMeContainer": {
-          addArr(aboutMeContainer[event.source.index].key, index);
-          break;
-        }
-        case "WorkExperienceContainer": {
-          addArr(experienceContainer[event.source.index].key, index);
-          break;
-        }
-        case "EducationContainer": {
-          addArr(educationContainer[event.source.index].key, index);
-          break;
-        }
-        case "ProjectContainer": {
-          addArr(Project[event.source.index].key, index);
-          break;
-        }
-        case "ContactContainer": {
-          addArr(ContactContainer[event.source.index].key, index);
-          break;
-        }
-        case "CVContainer": {
-          addArr(CVContainer[event.source.index].key, index);
-          break;
-        }
-        default: {
-          break;
-        }
-      }
-    } else if (event.destination.droppableId != event.source.droppableId) {
-      let index = event.destination.index;
-      if (arrPresent[index]) {
-        let index1 = index + 1;
-        ChangePartArr(index, index1);
-        ChangeColor(index, index1);
-      }
-      switch (event.source.droppableId) {
-        case "aboutMeContainer": {
-          addArr(aboutMeContainer[event.source.index].key, index);
-          break;
-        }
-        case "WorkExperienceContainer": {
-          addArr(experienceContainer[event.source.index].key, index);
-          break;
-        }
-        case "EducationContainer": {
-          addArr(educationContainer[event.source.index].key, index);
-          break;
-        }
-        case "ProjectContainer": {
-          addArr(Project[event.source.index].key, index);
-          break;
-        }
-        case "ContactContainer": {
-          addArr(ContactContainer[event.source.index].key, index);
-          break;
-        }
-        case "CVContainer": {
-          addArr(CVContainer[event.source.index].key, index);
-          break;
-        }
-        default: {
-          break;
-        }
-      }
+    if (!event.destination) {
+      return;
     } else {
-      let index1 = event.destination.index;
-      let index2 = event.source.index;
-      ChangePartArr(index1, index2);
-      ChangeArrPresent(index1, index2);
-      ChangeColor(index1, index2);
+      if (arrPresent.length == 0) {
+        let index = 0;
+        switch (event.source.droppableId) {
+          case "aboutMeContainer": {
+            addArr(aboutMeContainer[event.source.index].key, index);
+            break;
+          }
+          case "WorkExperienceContainer": {
+            addArr(experienceContainer[event.source.index].key, index);
+            break;
+          }
+          case "EducationContainer": {
+            addArr(educationContainer[event.source.index].key, index);
+            break;
+          }
+          case "ProjectContainer": {
+            addArr(Project[event.source.index].key, index);
+            break;
+          }
+          case "ContactContainer": {
+            addArr(ContactContainer[event.source.index].key, index);
+            break;
+          }
+          case "CVContainer": {
+            addArr(CVContainer[event.source.index].key, index);
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+      } else if (event.destination.droppableId != event.source.droppableId) {
+        let index = event.destination.index;
+        if (arrPresent[index]) {
+          let index1 = index + 1;
+          ChangePartArr(index, index1);
+          ChangeColor(index, index1);
+          if (arrPresent[index].container == event.source.droppableId) {
+            window.location.reload();
+          }
+        }
+        switch (event.source.droppableId) {
+          case "aboutMeContainer": {
+            addArr(aboutMeContainer[event.source.index].key, index);
+            break;
+          }
+          case "WorkExperienceContainer": {
+            addArr(experienceContainer[event.source.index].key, index);
+            break;
+          }
+          case "EducationContainer": {
+            addArr(educationContainer[event.source.index].key, index);
+            break;
+          }
+          case "ProjectContainer": {
+            addArr(Project[event.source.index].key, index);
+            break;
+          }
+          case "ContactContainer": {
+            addArr(ContactContainer[event.source.index].key, index);
+            break;
+          }
+          case "CVContainer": {
+            addArr(CVContainer[event.source.index].key, index);
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+      } else {
+        let index1 = event.destination.index;
+        let index2 = event.source.index;
+        ChangePartArr(index1, index2);
+        ChangeArrPresent(index1, index2);
+        ChangeColor(index1, index2);
+        if (
+          returnArr[event.destination.index] == returnArr[event.source.index]
+        ) {
+          window.location.reload();
+        }
+      }
     }
   };
   return (
@@ -122,7 +134,7 @@ function Edit() {
       <div className="w-full min-h-full h-fit bg-[#f1f3f4]">
         <div id="needtotake">
           <Droppable droppableId="Drop_Place">
-            {(provided) => (
+            {(provided, snapshot) => (
               <div
                 className="w-full min-h-full h-fit"
                 ref={provided.innerRef}
