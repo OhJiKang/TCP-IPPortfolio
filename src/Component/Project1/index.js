@@ -1,4 +1,6 @@
 import Section from "../../Page/Layout/Section";
+import { useEffect, useRef } from "react";
+import TextareaAutosize from "react-textarea-autosize"
 
 function Project1Com({
   increaseStatefunc,
@@ -39,6 +41,7 @@ function Project1Com({
     let URLIMAGE = await getBase64(event.target.files[0]);
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE, fatherindx);
   };
+
   return (
     <Section
       decreaseStateFunc={decreaseStateFunc}
@@ -71,16 +74,16 @@ function Project1Com({
           onChange={ChangeTitle}
           className="text-[18px]  outline-0	w-[100%] bg-transparent"
         ></textarea>
-        <textarea
+        <TextareaAutosize
           ind={index}
           id={keymame}
           idname={id}
           value={`${linkdes}`}
-          rows="6"
+          minRows="6"
           aria-multiline
           onChange={ChangeLink}
           className="mt-[10px] text-[14px] leading-[19px] outline-0	w-[100%] bg-transparent"
-        ></textarea>
+        ></TextareaAutosize>
       </div>
     </Section>
   );

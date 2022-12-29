@@ -1,4 +1,6 @@
 import Section from "../../Page/Layout/Section";
+import TextareaAutosize from "react-textarea-autosize";
+
 function ExperienceComp1({
   increaseStatefunc,
   ChangeLinkfunc,
@@ -40,13 +42,13 @@ function ExperienceComp1({
         onChange={ChangeDate}
         className="mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]   outline-0	w-[100%] bg-transparent"
       ></textarea>
-      <textarea
+      <TextareaAutosize
         id={id}
         value={`${linkdes}`}
         rows="6"
         onChange={ChangeLink}
         className="mx-[10px] mt-[10px] text-[14px] leading-[19px]   outline-0	w-[100%] bg-transparent"
-      ></textarea>
+      ></TextareaAutosize>
     </Section>
   );
 }

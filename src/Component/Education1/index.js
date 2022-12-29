@@ -1,4 +1,6 @@
 import Section from "../../Page/Layout/Section";
+import TextareaAutosize from "react-textarea-autosize";
+import { useEffect, useRef } from "react";
 
 function Education1Compo({
   increaseStatefunc,
@@ -20,6 +22,7 @@ function Education1Compo({
   const ChangeDate = (e) => {
     ChangeTimefunc(e.target.id, e.target.value);
   };
+
   return (
     <div>
       <Section
@@ -42,13 +45,13 @@ function Education1Compo({
           onChange={ChangeDate}
           className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] text-[#aaaaaa]"
         ></textarea>
-        <textarea
+        <TextareaAutosize
           id={id}
           value={`${linkdes}`}
-          rows="6"
+          minRows="6"
           onChange={ChangeLink}
-          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[18px] leading-[19px]"
-        ></textarea>
+          className=" outline-0	w-[100%] bg-transparent mx-[10px] mt-[10px] text-[14px] leading-[19px]"
+        ></TextareaAutosize>
       </Section>
     </div>
   );

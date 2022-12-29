@@ -2,7 +2,7 @@ import { useContext, useReducer } from "react";
 import Bin from "../../Asset/Bin.svg";
 import BlackBin from "../../Asset/BlackBin.svg";
 import WhiteBin from "../../Asset/WhiteBin.svg";
-import { TextColorContext } from "./ComponentWrapper";
+import { ColorContext } from "./ComponentWrapper";
 import useStore from "../Edit/Store/Store";
 function Section({
   children,
@@ -16,7 +16,7 @@ function Section({
       e.target.offsetParent.offsetParent.offsetParent.offsetParent.id;
     decreaseStateFunc(fatherIndex, id);
   };
-  const textColor = useContext(TextColorContext);
+  const textColor = useContext(ColorContext).ct;
   return (
     <div className={`${className} relative group/section`}>
       {children}

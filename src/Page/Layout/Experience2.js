@@ -1,9 +1,8 @@
 import { useEffect, useReducer, useState } from "react";
 import useStore from "../Edit/Store/Store";
-import ExperienceComp1 from "../../Component/Experiece1";
+import ExperienceComp2 from "../../Component/Experience2";
 import ComponentWrapper from "./ComponentWrapper";
-import Section from "./Section";
-function Experience1({ rerenderfunc, faindex }) {
+function Experience2({ rerenderfunc, faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
@@ -14,16 +13,16 @@ function Experience1({ rerenderfunc, faindex }) {
   const deleteComp = useStore((state) => state.deletePresent);
   let NewarrExperience = getArr.filter(
     (item) =>
-      item.Fatherindex == faindex && item.FatherComponent == "experience0"
+      item.Fatherindex == faindex && item.FatherComponent == "experience1"
   );
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
       id: 1,
-      FatherComponent: "experience0",
+      FatherComponent: "experience1",
       Fatherindex: faindex,
-      key: "ExperienceComp1",
-      Component: ExperienceComp1,
+      key: "ExperienceComp2",
+      Component: ExperienceComp2,
       title: "My Experienced",
       link: "I'm experienced at ReactJS for 2 years. Also I'm keen on learning new things everyday",
       time: "Sep 2021 - 2077",
@@ -36,75 +35,75 @@ function Experience1({ rerenderfunc, faindex }) {
   InitValue.forEach((i) => {
     if (!i.hasOwnProperty("Component")) {
       let arrCopy = { ...i };
-      arrCopy["Component"] = ExperienceComp1;
+      arrCopy["Component"] = ExperienceComp2;
       newInitValue.push(arrCopy);
     }
   });
   if (newInitValue.length == 0) {
     newInitValue = InitValue;
   }
-  const [numofExperience1, setnumofExperience1] = useState(newInitValue);
+  const [numofExperience2, setnumofExperience2] = useState(newInitValue);
   useEffect(() => {
-    addPart(numofExperience1);
+    addPart(numofExperience2);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofExperience1.length + 1;
-    let newnumofExperience1 = [
-      ...numofExperience1,
+    let idtoadd = numofExperience2.at(-1).id + 1;
+    let newnumofExperience2 = [
+      ...numofExperience2,
       {
         id: idtoadd,
-        FatherComponent: "experience0",
+        FatherComponent: "experience1",
         Fatherindex: faindex,
-        key: "ExperienceComp1",
-        Component: ExperienceComp1,
+        key: "ExperienceComp2",
+        Component: ExperienceComp2,
         title: "My Experienced",
         link: "I'm experienced at ReactJS for 2 years. Also I'm keen on learning new things everyday",
         time: "Sep 2021 - 2077",
       },
     ];
-    setnumofExperience1(newnumofExperience1);
-    addPart(newnumofExperience1);
+    setnumofExperience2(newnumofExperience2);
+    addPart(newnumofExperience2);
     forceUpdate();
   };
   const ChangeTitle = (id, value) => {
-    const arrneedtoChange = numofExperience1.find((item) => id == item.id);
+    const arrneedtoChange = numofExperience2.find((item) => id == item.id);
     let arrCopy = { ...arrneedtoChange };
     arrCopy["title"] = value;
     let newArr1 = [...partArr];
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
-    let newArr2 = [...numofExperience1];
+    let newArr2 = [...numofExperience2];
     let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
     newArr2[indx] = arrCopy;
-    setnumofExperience1(newArr2);
+    setnumofExperience2(newArr2);
     addUpdate(newArr1);
     forceUpdate();
   };
   const ChangeLink = (id, value) => {
-    const arrneedtoChange = numofExperience1.find((item) => id == item.id);
+    const arrneedtoChange = numofExperience2.find((item) => id == item.id);
     let arrCopy = { ...arrneedtoChange };
     arrCopy["link"] = value;
     let newArr1 = [...partArr];
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
-    let newArr2 = [...numofExperience1];
+    let newArr2 = [...numofExperience2];
     let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
     newArr2[indx] = arrCopy;
-    setnumofExperience1(newArr2);
+    setnumofExperience2(newArr2);
     addUpdate(newArr1);
     forceUpdate();
   };
   const ChangeTime = (id, value) => {
-    const arrneedtoChange = numofExperience1.find((item) => id == item.id);
+    const arrneedtoChange = numofExperience2.find((item) => id == item.id);
     let arrCopy = { ...arrneedtoChange };
     arrCopy["time"] = value;
     let newArr1 = [...partArr];
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
-    let newArr2 = [...numofExperience1];
+    let newArr2 = [...numofExperience2];
     let indx = newArr2.findIndex((x) => x.id === arrneedtoChange.id);
     newArr2[indx] = arrCopy;
-    setnumofExperience1(newArr2);
+    setnumofExperience2(newArr2);
     addUpdate(newArr1);
     forceUpdate();
   };
@@ -122,9 +121,9 @@ function Experience1({ rerenderfunc, faindex }) {
           item.FatherComponent == fatherKey
       );
       const deleteEle = partArr[deleteInx];
-      let numIndxinCompo = numofExperience1.indexOf(deleteEle);
-      numofExperience1.splice(numIndxinCompo, 1);
-      setnumofExperience1(numofExperience1);
+      let numIndxinCompo = numofExperience2.indexOf(deleteEle);
+      numofExperience2.splice(numIndxinCompo, 1);
+      setnumofExperience2(numofExperience2);
       deletefunc(deleteInx);
     }
     forceUpdate();
@@ -151,10 +150,10 @@ function Experience1({ rerenderfunc, faindex }) {
       id={faindex}
     >
       <div className="relative w-[820px] border-c4 border-[5px] bg-c2 rounded-[40px] m-auto flex flex-col gap-y-[20px] items-center py-[35px]">
-        <div className="absolute w-[120px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[120px] h-[40px] border-c4 border-[5px] rounded-[10px] text-ct font-para font-bold text-[18px] text-center bg-c3 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Experience
         </div>
-        {numofExperience1.map(({ link, title, id, time, Component }, index) => (
+        {numofExperience2.map(({ link, title, id, time, Component }, index) => (
           <Component
             decreaseStateFunc={decreaseStateFunc}
             index={index}
@@ -175,4 +174,4 @@ function Experience1({ rerenderfunc, faindex }) {
   );
 }
 
-export default Experience1;
+export default Experience2;

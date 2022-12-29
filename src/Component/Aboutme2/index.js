@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 
 function Aboutme2Compo({
   increaseStatefunc,
@@ -41,9 +42,10 @@ function Aboutme2Compo({
 
     ChangeImagefunc(event.target.getAttribute("idname"), URLIMAGE);
   };
+
   return (
     <div className="relative w-[720px] bg-c2 border-c4 border-[5px] rounded-[100px] py-[40px] pl-[109px] m-auto">
-      <div className="absolute top-[10%] left-[-14%] border-[5px] rounded-full h-[200px] w-[200px] border-c4 overflow-hidden">
+      <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 border-[5px] rounded-full h-[200px] w-[200px] border-c4 overflow-hidden">
         <div className="relative">
           <label
             htmlFor={keymame}
@@ -68,13 +70,13 @@ function Aboutme2Compo({
           onChange={ChangeTitle}
           className=" outline-0	w-[100%] bg-transparent text-[18px]"
         ></textarea>
-        <textarea
-          rows="6"
+        <TextareaAutosize
+          minRows="6"
           id={id}
           value={`${linkdes}`}
           onChange={ChangeLink}
           className="outline-0	w-[100%] bg-transparent text-[14px] leading-[19px]"
-        ></textarea>
+        ></TextareaAutosize>
       </div>
     </div>
   );

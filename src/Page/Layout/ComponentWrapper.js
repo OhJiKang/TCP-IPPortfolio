@@ -166,9 +166,7 @@ function ComponentWrapper({ children, className, id, deleteFunc }) {
       className={` ${className} component-wrapper relative group text-ct`}
       id={id}
     >
-      <TextColorContext.Provider value={style.ct}>
-        {children}
-      </TextColorContext.Provider>
+      <ColorContext.Provider value={style}>{children}</ColorContext.Provider>
       <div
         id="needtoDisable"
         className="absolute bottom-0 z-10 left-1/2 bg-white flex flex-row rounded-t-full rounded-b-full opacity-0 group-hover:opacity-100 duration-300 ease-in-out -translate-x-1/2 translate-y-1/2"
@@ -205,4 +203,4 @@ function ComponentWrapper({ children, className, id, deleteFunc }) {
 }
 
 export default ComponentWrapper;
-export const TextColorContext = createContext();
+export const ColorContext = createContext();

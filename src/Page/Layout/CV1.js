@@ -27,7 +27,7 @@ function CV1({ faindex, rerenderfunc }) {
       title: "Student at Ton Duc Thang University",
       link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
       time: "Sep 2021 - 2077",
-      URL: ImageIcon,
+      URLPDF: "",
     },
   ];
   if (NewarrCV.length != 0) {
@@ -49,7 +49,7 @@ function CV1({ faindex, rerenderfunc }) {
     addPart(numofCV1);
   }, []);
   const IncreaseElement = () => {
-    let idtoadd = numofCV1.length + 1;
+    let idtoadd = numofCV1.at(-1).id + 1;
     let newnumofCV1 = [
       ...numofCV1,
       {
@@ -61,7 +61,7 @@ function CV1({ faindex, rerenderfunc }) {
         title: "Student at Ton Duc Thang University",
         link: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim adminim veniam, \nquis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. \nDuis aute irure dolor inreprehenderit in voluptate velit esse \ncillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, \nsunt inculpa qui officia deserunt mollit anim id est laborum consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.",
         time: "Sep 2021 - 2077",
-        URL: ImageIcon,
+        URLPDF: "",
       },
     ];
     setnumofCV1(newnumofCV1);
@@ -149,7 +149,7 @@ function CV1({ faindex, rerenderfunc }) {
   const changeImage = (id, URL) => {
     const arrneedtoChange = numofCV1.find((item) => id == item.id);
     let arrCopy = { ...arrneedtoChange };
-    arrCopy["URL"] = URL;
+    arrCopy["URLPDF"] = URL;
     let newArr1 = [...partArr];
     let indx0 = newArr1.findIndex((x) => x.id === arrneedtoChange.id);
     newArr1[indx0] = arrCopy;
@@ -167,14 +167,14 @@ function CV1({ faindex, rerenderfunc }) {
       increaseStatefunc={IncreaseElement}
       id={faindex}
     >
-      {numofCV1.map(({ link, title, id, URL, time, Component }, index) => (
+      {numofCV1.map(({ link, title, id, URLPDF, time, Component }, index) => (
         <Component
           decreaseStateFunc={decreaseStateFunc}
           index={index}
           titledes={title}
           linkdes={link}
           datedes={time}
-          image={URL}
+          PDF={URLPDF}
           ChangeTitlefunc={ChangeTitle}
           ChangeLinkfunc={ChangeLink}
           ChangeTimefunc={ChangeTime}
@@ -183,6 +183,7 @@ function CV1({ faindex, rerenderfunc }) {
           increaseStatefunc={IncreaseElement}
           key={`Little_Part_${index}_${id}`}
           keymame={`Little_Part_${faindex}_${id}`}
+          fatherindx={faindex}
         />
       ))}
     </ComponentWrapper>
