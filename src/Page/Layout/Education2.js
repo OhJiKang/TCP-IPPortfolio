@@ -8,6 +8,14 @@ function Education2({ rerenderfunc, faindex }) {
   const addPart = useStore((state) => state.addPart);
   const addUpdate = useStore((state) => state.addforUpload);
   let partArr = useStore((state) => state.PartArr);
+  if (
+    JSON.stringify(partArr) !=
+    JSON.stringify(
+      JSON.parse(window.localStorage.getItem("EditArr")).state.PartArr
+    )
+  ) {
+    partArr = JSON.parse(window.localStorage.getItem("EditArr")).state.PartArr;
+  }
   const getArr = [...partArr];
   const PresentArr = useStore((state) => state.arrPresent);
   const deletefunc = useStore((state) => state.deletePart);
@@ -18,10 +26,10 @@ function Education2({ rerenderfunc, faindex }) {
       item.Fatherindex == faindex && item.FatherComponent == "Education1"
   );
   let job = "";
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
   if (window.localStorage.getItem("profession")) {
     job = window.localStorage.getItem("profession");
   }
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
   let InitValue = [
     {
       id: 1,
@@ -53,10 +61,8 @@ function Education2({ rerenderfunc, faindex }) {
   const [numofEducation2, setnumofEducation2] = useState(newInitValue);
   useEffect(() => {
     addPart(numofEducation2);
-  }, []);
-  useEffect(() => {
-    forceUpdate(numofEducation2);
-  }, [numofEducation2]);
+  }, [JSON.stringify(numofEducation2)]);
+
   const IncreaseElement = () => {
     let idtoadd = numofEducation2.at(-1).id + 1;
     let newnumofEducation2 = [

@@ -21,12 +21,36 @@ import Project1IMG from "../Asset/Project_1.png";
 import Project2IMG from "../Asset/Project_2.png";
 
 const aboutMeContainer = [
-  { key: "AboutMe0", Component: AboutMe1, id: 0, image: AboutMe1IMG },
-  { key: "AboutMe1", Component: AboutMe2, id: 1, image: AboutMe2IMG },
+  {
+    key: "AboutMe0",
+    Component: AboutMe1,
+    id: 0,
+    image: AboutMe1IMG,
+    container: "aboutMeContainer",
+  },
+  {
+    key: "AboutMe1",
+    Component: AboutMe2,
+    id: 1,
+    image: AboutMe2IMG,
+    container: "aboutMeContainer",
+  },
 ];
 const educationContainer = [
-  { key: "Education0", Component: Education1, id: 100, image: Education1IMG },
-  { key: "Education1", Component: Education2, id: 101, image: Education2IMG },
+  {
+    key: "Education0",
+    Component: Education1,
+    id: 100,
+    image: Education1IMG,
+    container: "EducationContainer",
+  },
+  {
+    key: "Education1",
+    Component: Education2,
+    id: 101,
+    image: Education2IMG,
+    container: "EducationContainer",
+  },
 ];
 const experienceContainer = [
   {
@@ -34,21 +58,49 @@ const experienceContainer = [
     Component: Experience1,
     id: 200,
     image: Experience1IMG,
+    container: "WorkExperienceContainer",
   },
   {
     key: "experience1",
     Component: Experience2,
-    id: 200,
+    id: 201,
     image: Experience2IMG,
+    container: "WorkExperienceContainer",
   },
 ];
 const Project = [
-  { key: "Project0", Component: Project1, id: 300, image: Project1IMG },
-  { key: "Project1", Component: Project2, id: 300, image: Project2IMG },
+  {
+    key: "Project0",
+    Component: Project1,
+    id: 300,
+    image: Project1IMG,
+    container: "ProjectContainer",
+  },
+  {
+    key: "Project1",
+    Component: Project2,
+    id: 300,
+    image: Project2IMG,
+    container: "ProjectContainer",
+  },
 ];
-const CVContainer = [{ key: "CV0", Component: CV1, id: 400, image: MyCV1IMG }];
+const CVContainer = [
+  {
+    key: "CV0",
+    Component: CV1,
+    id: 400,
+    image: MyCV1IMG,
+    container: "CVContainer",
+  },
+];
 const ContactContainer = [
-  { key: "Contact0", Component: Contact1, id: 500, image: Contact1IMG },
+  {
+    key: "Contact0",
+    Component: Contact1,
+    id: 500,
+    image: Contact1IMG,
+    container: "ContactContainer",
+  },
 ];
 export {
   aboutMeContainer,
