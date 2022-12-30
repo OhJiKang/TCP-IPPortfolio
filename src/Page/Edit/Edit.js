@@ -82,7 +82,7 @@ function Edit() {
           let index1 = index + 1;
           ChangePartArr(index, index1);
           ChangeColor(index, index1);
-          if (arrPresent[index].container == event.source.droppableId) {
+          if (returnArr[index].container == event.source.droppableId) {
             window.location.reload();
           }
         }
