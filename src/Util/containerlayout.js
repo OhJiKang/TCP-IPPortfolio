@@ -79,7 +79,7 @@ const Project = [
   {
     key: "Project1",
     Component: Project2,
-    id: 300,
+    id: 301,
     image: Project2IMG,
     container: "ProjectContainer",
   },
